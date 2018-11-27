@@ -7,16 +7,16 @@ rng('default')
 global sigma; %%% noise level
 sigma = 25;
 
-run /mnt/storage/home/csprh/code/matconvnet-1.0-beta25i/matlab/vl_setupnn
-%%%-------------------------------------------------------------------------
+run /home/cosc/csprh/linux/code/matconvnet-1.0-beta25/matlab/vl_setupnn
+%%%-----------------------------------------------------------i--------------
 %%% Configuration
 %%%-------------------------------------------------------------------------
-opts.modelName        = 'model_Huwei_All50a'; %%% model name
+opts.modelName        = 'model_Huwei_All50b'; %%% model name
 opts.learningRate     = [logspace(-3,-3,30) logspace(-4,-4,20)];%%% you can change the learning rate
-opts.learningRate     = [logspace(-3,-3,7) logspace(-3,-4,20)];
+opts.learningRate     = [logspace(-3,-3,30) logspace(-3,-5,30)];
 %opts.learningRate     = [logspace(-3,-3,12) logspace(-4,-4,7)];
 opts.batchSize        = 128;
-opts.gpus             = []; %%% this code can only support one GPU!
+opts.gpus             = [1]; %%% this code can only support one GPU!
 opts.numSubBatches    = 2;
 opts.bnormLearningRate= 0;
            

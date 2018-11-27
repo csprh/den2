@@ -6,11 +6,12 @@ rng('default')
 
 global sigma; %%% noise level
 sigma = 25;
-run /mnt/storage/home/csprh/code/matconvnet-1.0-beta25/matlab/vl_setupnn
+
+run /mnt/storage/home/csprh/code/matconvnet-1.0-beta25i/matlab/vl_setupnn
 %%%-------------------------------------------------------------------------
 %%% Configuration
 %%%-------------------------------------------------------------------------
-opts.modelName        = 'model_Huwei_All50a'; %%% model name
+opts.modelName        = 'model_Huwei_All50b'; %%% model name
 opts.learningRate     = [logspace(-3,-3,30) logspace(-4,-4,20)];%%% you can change the learning rate
 opts.learningRate     = [logspace(-3,-3,7) logspace(-3,-4,20)];
 %opts.learningRate     = [logspace(-3,-3,12) logspace(-4,-4,7)];
