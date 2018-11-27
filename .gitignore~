@@ -1,3 +1,11 @@
 *.mat
 *.png
 !theseIndices.mat
+!model_Huwei_All-epoch-19.mat
+!DnCNN3.mat
+!FDnCNN_Clip_color.mat
+!DnCNN_Clip_gray.mat
+!FDnCNN_color.mat
+!FDnCNN_gray.mat
+!GD_Color_Blind.mat
+!GD_Gray_Blind.mat
