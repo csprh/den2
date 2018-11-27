@@ -49,26 +49,3 @@ for i = 1 : 30
 end
 
 
-
-
-
-
-%pause;
-
-
-
-
-toc;
-
-function output = getThisPath(baseDir, classesA,imName,cleanNoisy)
-
-for ii = 1: length(classesA)
-    thisClass = classesA{ii};
-    thisPath = dir ([baseDir thisClass cleanNoisy imName]);
-    if length(thisPath) == 1 
-        output = [baseDir thisClass cleanNoisy imName];
-    end
-end
-
-
-
