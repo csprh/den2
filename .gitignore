@@ -1,6 +1,7 @@
 *.mat
 *.png
 !theseIndices.mat
+!testInds.mat
 !model_Huwei_All-epoch-19.mat
 !DnCNN3.mat
 !FDnCNN_Clip_color.mat
