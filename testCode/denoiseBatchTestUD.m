@@ -25,7 +25,7 @@ for i = 1 : 30
     
     zRGB = im2double(imread(imName)); % uint8
     input = single(zRGB);
-    res    = vl_simplenn(net,input,[],[],'conserveMemory',true,'mode','test','CuDNN', 'false');
+    res    = vl_simplenn(net,input,[],[],'conserveMemory',true,'mode','test','CuDNN', 'true');
     %res = simplenn_matlab(net, input); %%% use this if you did not install matconvnet.
     output = input - res(end).x;
     output = round(output*255);
