@@ -12,8 +12,8 @@ load(fullfile('/home/cosc/csprh/linux/HABCODE/scratch/HUAWEI/Models/model_Huwei_
 outDirDnCNN = [ baseDir 'OutUoBCNN_2/'];
 load(fullfile('/home/cosc/csprh/linux/HABCODE/scratch/HUAWEI/Models/model_Huwei_All50a-epoch-60.mat'));
 outDirDnCNN = [ baseDir 'OutUoBCNN_3/'];
-load(fullfile('/home/cosc/csprh/linux/HABCODE/scratch/HUAWEI/Models/model_Huwei_All50b-epoch-60.mat'));
-outDirDnCNN = [ baseDir 'OutUoBCNN_4/'];
+%load(fullfile('/home/cosc/csprh/linux/HABCODE/scratch/HUAWEI/Models/model_Huwei_All50b-epoch-60.mat'));
+%outDirDnCNN = [ baseDir 'OutUoBCNN_4/'];
 net = vl_simplenn_tidy(net);
 net.layers = net.layers(1:end-1);
 net = vl_simplenn_tidy(net);
