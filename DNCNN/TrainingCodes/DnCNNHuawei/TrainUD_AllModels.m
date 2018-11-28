@@ -41,8 +41,8 @@ opts.backPropDepth    = Inf;
 net  = feval('DnCNN_init_model_Huwei_All');
 
 %%%  load data
-opts.expDir      = fullfile('data', opts.modelName);
-
+opts.expDir      = opts.modelName;
+opts.modelName = 'out';
 %%%-------------------------------------------------------------------------
 %%%   Train 
 %%%-------------------------------------------------------------------------
