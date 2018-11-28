@@ -14,11 +14,8 @@ addpath('utilities');
 batchSize      = 128;        %%% batch size
 
 
-if ismac
-    baseDir = '/Users/csprh/tmp/Huawei/Train/';
-else
-    baseDir = '/mnt/storage/home/csprh/scratch/HAB/Huwei/Train/';
-end
+
+baseDir = '/home/cosc/csprh/linux/HABCODE/scratch/HUAWEI/Train';
 
 
 
