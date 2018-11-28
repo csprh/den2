@@ -8,6 +8,7 @@ run /home/cosc/csprh/linux/code/matconvnet-1.0-beta25/matlab/vl_setupnn
 baseDir = '/home/cosc/csprh/linux/HABCODE/scratch/HUAWEI/Test/';
 %load(fullfile('/mnt/storage/home/csprh/code/HUAWEI/DNCNN/TrainingCodes/DnCNNHuawei/data/model_Huwei_All/model_Huwei_All-epoch-19.mat'));
 load(fullfile('/home/cosc/csprh/linux/HABCODE/scratch/HUAWEI/Models/model_0_0/out-epoch-60.mat'));
+load(fullfile('/home/cosc/csprh/linux/HABCODE/scratch/HUAWEI/Models/model_Huwei_All50-epoch-27.mat'));
 net = vl_simplenn_tidy(net);
 net.layers = net.layers(1:end-1);
 net = vl_simplenn_tidy(net);
