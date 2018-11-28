@@ -15,7 +15,7 @@ batchSize      = 128;        %%% batch size
 
 
 
-baseDir = '/home/cosc/csprh/linux/HABCODE/scratch/HUAWEI/Train';
+baseDir = '/home/cosc/csprh/linux/HABCODE/scratch/HUAWEI/Train/';
 
 
 
