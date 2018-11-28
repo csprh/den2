@@ -1,5 +1,5 @@
 function CropIms;
-
+gpuDevice();
 addpath('../LASIP');
 addpath('../DNCNN/model');
 addpath('../DNCNN/utilities');
@@ -8,14 +8,19 @@ run /home/cosc/csprh/linux/code/matconvnet-1.0-beta25/matlab/vl_setupnn
 baseDir = '/home/cosc/csprh/linux/HABCODE/scratch/HUAWEI/Test/';
 %load(fullfile('/mnt/storage/home/csprh/code/HUAWEI/DNCNN/TrainingCodes/DnCNNHuawei/data/model_Huwei_All/model_Huwei_All-epoch-19.mat'));
 load(fullfile('/home/cosc/csprh/linux/HABCODE/scratch/HUAWEI/Models/model_0_0/out-epoch-60.mat'));
-load(fullfile('/home/cosc/csprh/linux/HABCODE/scratch/HUAWEI/Models/model_Huwei_All50-epoch-27.mat'));
+load(fullfile('/home/cosc/csprh/linux/HABCODE/scratch/HUAWEI/Models/model_Huwei_All50-epoch-27.mat')); 
+outDirDnCNN = [ baseDir 'OutUoBCNN_2/'];
+load(fullfile('/home/cosc/csprh/linux/HABCODE/scratch/HUAWEI/Models/model_Huwei_All50a-epoch-60.mat'));
+outDirDnCNN = [ baseDir 'OutUoBCNN_3/'];
+load(fullfile('/home/cosc/csprh/linux/HABCODE/scratch/HUAWEI/Models/model_Huwei_All50b-epoch-60.mat'));
+outDirDnCNN = [ baseDir 'OutUoBCNN_4/'];
 net = vl_simplenn_tidy(net);
 net.layers = net.layers(1:end-1);
 net = vl_simplenn_tidy(net);
 
 
 
-outDirDnCNN = [ baseDir 'OutUoBCNN_2/'];
+
 mkdir(outDirDnCNN);
 
 
