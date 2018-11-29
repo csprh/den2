@@ -24,7 +24,7 @@ modelDir = [scratchDir '/Models/'];
 nameOfModel = 'out-epoch-60.mat'; outDirNN = 'OutUoBCNN_6/';
 multiModelDenoise2(baseDir, nameOfModel, outDirNN, modelDir);
 
-
+ 
 function multiModelDenoise1(baseDir, nameOfModel, outDirNN, modelDir)
 load testInds;
 load borders;
@@ -55,29 +55,22 @@ end
 
 function multiModelDenoise3(baseDir, nameOfModel, outDirNN, modelDir)
 
-load testInds;
-load borders;
-
 bandIndices{1} = 1:10;
 bandIndices{2} = 11:20;
 bandIndices{3} = 21:30;
-
-testIs{1} = testInds(1:10);
-testIs{2} = testInds(11:20);
-testIs{3} = testInds(21:30);
+testIs{1} = testInds{1:10};
 
 for thisBand1 = 1:3
     bandIms = bandIndices{thisBand};
-    thisI = testIs{thisBand1};
-    
-    for thisBand2 = 1:8
-        modName = ['model_' num2str(thisBand1) '_' num2str(thisBand2) '/' nameOfModel];
-        lowEdge = borders(thisBand2); highEdge = borders(thisBand2+1);
-        bandIms2 = bandIms((thisI>=lowEdge)&(thisI<highEdge))
-        for i = 1 : length(bandIms2)
-            thisDenoise(bandIms2(i), baseDir, modName, outDirNN, modelDir);
-        end
+    allIndices = 1:30;
+for thisBand2 = 1:8
+    modName = ['model_' num2str(thisBand1) '_' num2str(thisBand2) '/' nameOfModel];
+    lowEdge = borders(thisBand2); highEdge = borders(thisBand2+1);
+    bandIms2 = bandIms((testInds>=lowEdge)&(testInds<highEdge))
+    for i = 1 : length(bandIms2)
+        thisDenoise(bandIms2(i), baseDir, modName, outDirNN, modelDir);
     end
+end
 end
 
 
