@@ -77,8 +77,8 @@ net = vl_simplenn_tidy(net);
 net.layers = net.layers(1:end-1);
 net = vl_simplenn_tidy(net);
 
-noisyName = [baseDir 'Noisy\Test_Image_' num2str(ImNum) '.png'];
-cleanName = [baseDir 'Clean\Test_Image_' num2str(ImNum) '.png'];
+noisyName = [baseDir 'Noisy/Test_Image_' num2str(ImNum) '.png'];
+cleanName = [baseDir 'Clean/Test_Image_' num2str(ImNum) '.png'];
 
 zRGB = im2double(imread(noisyName));
 yRGB = im2double(imread(cleanName));
