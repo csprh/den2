@@ -68,7 +68,7 @@ testIs{2} = testInds(11:20);
 testIs{3} = testInds(21:30);
 
 for thisBand1 = 1:3
-    bandIms = bandIndices{thisBand};
+    bandIms = bandIndices{thisBand1};
     thisI = testIs{thisBand1};
     
     for thisBand2 = 1:8
