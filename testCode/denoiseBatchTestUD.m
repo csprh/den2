@@ -21,9 +21,10 @@ modelDir = [scratchDir '/Models/'];
 %singleModelDenoise(baseDir, nameOfModel, outDirNN, modelDir);
 %nameOfModel = 'out-epoch-60.mat'; outDirNN = 'OutUoBCNN_5/';
 %multiModelDenoise1(baseDir, nameOfModel, outDirNN, modelDir);
-nameOfModel = 'out-epoch-60.mat'; outDirNN = 'OutUoBCNN_6/';
-multiModelDenoise2(baseDir, nameOfModel, outDirNN, modelDir);
-
+%nameOfModel = 'out-epoch-60.mat'; outDirNN = 'OutUoBCNN_6/';
+%multiModelDenoise2(baseDir, nameOfModel, outDirNN, modelDir);
+nameOfModel = 'out-epoch-60.mat'; outDirNN = 'OutUoBCNN_7/';
+multiModelDenoise3(baseDir, nameOfModel, outDirNN, modelDir)
 
 function multiModelDenoise1(baseDir, nameOfModel, outDirNN, modelDir)
 load testInds;
