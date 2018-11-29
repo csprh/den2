@@ -25,6 +25,8 @@ outPSNR60 = singleModelDenoise(baseDir, nameOfModel,  modelDir);
 %singleModelDenoise(baseDir, nameOfModel, outDirNN, modelDir);
 nameOfModel = 'out-epoch-60.mat'; 
 outPSNR5 = multiModelDenoise1(baseDir, nameOfModel, modelDir);
+nameOfModel = 'out-epoch-60.mat'; 
+outPSNR6 = multiModelDenoise2(baseDir, nameOfModel, modelDir);
 outPSNR5
 outPSNR40
 outPSNR50
@@ -46,11 +48,24 @@ for thisBand = 1:8
     end
 end
 
+function outPSNR = multiModelDenoise2(baseDir, nameOfModel, modelDir)
+
+bandIndices{1} = 1:10;
+bandIndices{2} = 11:20;
+bandIndices{3} = 21:30;
+
+for thisBand = 1:3
+    modName = ['model_' num2str(thisBand) '_0/' nameOfModel];
+    bandIms = bandIndices{thisBand};
+    for i = 1 : length(bandIms)
+        outPSNR(bandIms(i)) = thisDenoise(bandIms(i), baseDir, modName,  modelDir);
+    end
+end
 
 function outPSNR = singleModelDenoise(baseDir, nameOfModel, modelDir)
 
 for i = 1 : 30
-    outPSNR(i) = thisDenoise(i, baseDir, nameOfModel, modelDir);
+    outPSNR(i) = thisDenoise(i, baseDir, nameOfModel, modelDir)
 end
 
 
