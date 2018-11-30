@@ -23,8 +23,27 @@ modelDir = [scratchDir '/Models/'];
 %multiModelDenoise1(baseDir, nameOfModel, outDirNN, modelDir);
 %nameOfModel = 'out-epoch-60.mat'; outDirNN = 'OutUoBCNN_6/';
 %multiModelDenoise2(baseDir, nameOfModel, outDirNN, modelDir);
-nameOfModel = 'out-epoch-60.mat'; outDirNN = 'OutUoBCNN_7/';
-multiModelDenoise3(baseDir, nameOfModel, outDirNN, modelDir)
+%nameOfModel = 'out-epoch-60.mat'; outDirNN = 'OutUoBCNN_7/';
+%multiModelDenoise3(baseDir, nameOfModel, outDirNN, modelDir)
+nameOfModel = 'out-epoch-30.mat'; outDirNN = 'OutUoBCNN_30/';
+multiModelDenoise1(baseDir, nameOfModel, outDirNN, modelDir);
+nameOfModel = 'out-epoch-40.mat'; outDirNN = 'OutUoBCNN_40/';
+multiModelDenoise1(baseDir, nameOfModel, outDirNN, modelDir);
+nameOfModel = 'out-epoch-50.mat'; outDirNN = 'OutUoBCNN_50/';
+multiModelDenoise1(baseDir, nameOfModel, outDirNN, modelDir);
+nameOfModel = 'out-epoch-60.mat'; outDirNN = 'OutUoBCNN_60/';
+multiModelDenoise1(baseDir, nameOfModel, outDirNN, modelDir);
+nameOfModel = 'out-epoch-70.mat'; outDirNN = 'OutUoBCNN_70/';
+multiModelDenoise1(baseDir, nameOfModel, outDirNN, modelDir);
+nameOfModel = 'out-epoch-80.mat'; outDirNN = 'OutUoBCNN_80/';
+multiModelDenoise1(baseDir, nameOfModel, outDirNN, modelDir);
+nameOfModel = 'out-epoch-90.mat'; outDirNN = 'OutUoBCNN_90/';
+multiModelDenoise1(baseDir, nameOfModel, outDirNN, modelDir);
+nameOfModel = 'out-epoch-100.mat'; outDirNN = 'OutUoBCNN_100/';
+multiModelDenoise1(baseDir, nameOfModel, outDirNN, modelDir);
+nameOfModel = 'out-epoch-120.mat'; outDirNN = 'OutUoBCNN_120/';
+multiModelDenoise1(baseDir, nameOfModel, outDirNN, modelDir);
+
 
 function multiModelDenoise1(baseDir, nameOfModel, outDirNN, modelDir)
 load testInds;
