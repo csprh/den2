@@ -43,16 +43,16 @@ modelDir = [scratchDir '/Models/'];
 
 
 nameOfModel = 'out-epoch-40.mat'; 
-outPSNR40 = singleModelDenoise(baseDir, nameOfModel,  modelDir, validInds(:,2))
+outPSNR40 = multiModelDenoise1(baseDir, nameOfModel,  modelDir, 1,  validInds(:,2))
 
 
 function outPSNRMean = multiModelDenoise1(baseDir, nameOfModel,  modelDir, thisBand, validInds)
 
 load borders;
-
+allIndices = 1:30;
 modName = ['model_0_' num2str(thisBand) '/' nameOfModel];
 lowEdge = borders(thisBand); highEdge = borders(thisBand+1);
-bandIms = allIndices((testInds>=lowEdge)&(testInds<highEdge))
+bandIms = allIndices((validInds>=lowEdge)&(validInds<highEdge))
 for i = 1 : length(bandIms)
     outPSNR(bandIms(i)) = thisDenoise(bandIms(i), baseDir, modName,  modelDir);
 end
