@@ -2,7 +2,7 @@ function TrainUD_AllModels
 run /home/cosc/csprh/linux/code/matconvnet-1.0-beta25/matlab/vl_setupnn
 
 
-for theseBands = 0:8
+for theseBands = 1:8
      createModels(0,theseBands);
 end
 
