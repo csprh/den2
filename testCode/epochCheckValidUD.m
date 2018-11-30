@@ -41,9 +41,24 @@ scratchDir = '/home/cosc/csprh/linux/HABCODE/scratch/HUAWEI';
 baseDir = [scratchDir '/Valid3/'];
 modelDir = [scratchDir '/Models/'];
 
+psnrInds = 0;
+for epochs = 30:5:120
+    psnrInds = psnrInds + 1;
+    nameOfModel = 'out-epoch-' num2str(epochs) '.mat'; 
+    outPSNR1(psnrInds) = multiModelDenoise1(baseDir, nameOfModel,  modelDir, 1,  validInds(:,3));
+    outPSNR1
+    save outPSNR1 outPSNR1
+end
 
-nameOfModel = 'out-epoch-40.mat'; 
-outPSNR40 = multiModelDenoise1(baseDir, nameOfModel,  modelDir, 1,  validInds(:,3))
+psnrInds = 0;
+for epochs = 30:5:120
+    psnrInds = psnrInds + 1;
+    nameOfModel = 'out-epoch-' num2str(epochs) '.mat'; 
+    outPSNR2(psnrInds) = multiModelDenoise1(baseDir, nameOfModel,  modelDir, 2,  validInds(:,3));
+    outPSNR2
+    save outPSNR2 outPSNR2
+end
+
 
 
 function outPSNRMean = multiModelDenoise1(baseDir, nameOfModel,  modelDir, thisBand, validInds)
