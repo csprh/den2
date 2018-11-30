@@ -43,7 +43,7 @@ modelDir = [scratchDir '/Models/'];
 
 
 nameOfModel = 'out-epoch-40.mat'; 
-outPSNR40 = multiModelDenoise1(baseDir, nameOfModel,  modelDir, 1,  validInds(:,2))
+outPSNR40 = multiModelDenoise1(baseDir, nameOfModel,  modelDir, 1,  validInds(:,3))
 
 
 function outPSNRMean = multiModelDenoise1(baseDir, nameOfModel,  modelDir, thisBand, validInds)
