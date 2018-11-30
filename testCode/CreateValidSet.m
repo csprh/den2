@@ -39,7 +39,7 @@ classesA{1} = 'Buildings/';
 classesA{2} = 'Foliage/';
 classesA{3} = 'Text/';
 
-theseInds = inds(:,3);
+theseInds = inds(:,2);
 
 
 for ii = 1:30
