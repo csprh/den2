@@ -52,7 +52,7 @@ for ii = 1:30
     CleanImageName = getThisPath(baseDir,classesA,imName,'Clean/');
     
     NoisyImage = imread(NoisyImageName);
-    NoisyImage = imcrop(NoisyImage, [1+1024 1 1023 1023]);
+    NoisyImage = imcrop(NoisyImage, [1+1024 1 1023 1023])
     imwrite(NoisyImage,[outDirNoisy thisImName]);
     
     CleanImage = imread(CleanImageName);
