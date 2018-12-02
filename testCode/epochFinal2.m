@@ -42,7 +42,7 @@ baseDir = [scratchDir '/Valid3/'];
 modelDir = [scratchDir '/Models/'];
 
 
-for band = 1:7
+for band = 7:7
 epochs = 50;
 nameOfModel = ['out-epoch-' num2str(epochs) '.mat']; 
 orig = 0;
