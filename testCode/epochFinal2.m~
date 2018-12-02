@@ -68,7 +68,6 @@ end
 
 outPSNRBandsValid4_Fin
 outPSNRBandsValid4_Orig120
-outPSNRBandsValid4_Orig
 
 function outPSNRMean = multiModelDenoise1(baseDir, nameOfModel,  modelDir, thisBand, validInds, orig)
 
