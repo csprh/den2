@@ -81,7 +81,7 @@ else
    modName = ['model_0_' num2str(thisBand) '/' nameOfModel]; 
 end
 lowEdge = borders(thisBand); highEdge = borders(thisBand+1);
-bandIms = allIndices((validInds>=lowEdge)&(validInds<highEdge))
+bandIms = allIndices((validInds>=lowEdge)&(validInds<highEdge)) 
 for i = 1 : length(bandIms)
     outPSNR(i) = thisDenoise(bandIms(i), baseDir, modName,  modelDir);
 end
