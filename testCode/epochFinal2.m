@@ -42,6 +42,12 @@ baseDir = [scratchDir '/Valid4/'];
 modelDir = [scratchDir '/Models/'];
 
 
+for band = 7:8
+epochs = 50;
+nameOfModel = ['out-epoch-' num2str(epochs) '.mat']; 
+orig = 0;
+outPSNRBandsValid4_Fin(band) = multiModelDenoise1(baseDir, nameOfModel,  modelDir, band, validInds(:,3), orig)
+end
 
 for band = 1:8
 epochs = 147;
@@ -58,12 +64,6 @@ nameOfModel = ['out-epoch-' num2str(epochs) '.mat'];
 outPSNRBandsValid4_Orig120(band) = multiModelDenoise1(baseDir, nameOfModel,  modelDir, band, validInds(:,3), orig)
 end
 
-for band = 1:8
-epochs = 50;
-nameOfModel = ['out-epoch-' num2str(epochs) '.mat']; 
-orig = 0;
-outPSNRBandsValid4_Fin(band) = multiModelDenoise1(baseDir, nameOfModel,  modelDir, band, validInds(:,3), orig)
-end
 
 outPSNRBandsValid4_Fin
 outPSNRBandsValid4_Orig
