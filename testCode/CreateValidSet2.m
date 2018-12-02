@@ -1,8 +1,8 @@
 function CreateValidSet;
 
-baseDir = '/mnt/storage/home/csprh/scratch/HAB/Huwei/';
-outDirClean = '/mnt/storage/home/csprh/scratch/HAB/Huwei/Valid4/Clean/';
-outDirNoisy = '/mnt/storage/home/csprh/scratch/HAB/Huwei/Valid4/Noisy/';
+baseDir = '/home/cosc/csprh/linux/HABCODE/scratch/HUAWEI/Train/';
+outDirClean = '/home/cosc/csprh/linux/HABCODE/scratch/HUAWEI/Valid4/Clean/';
+outDirNoisy = '/home/cosc/csprh/linux/HABCODE/scratch/HUAWEI/Valid4/Noisy/';
 inds = [1 126 72
 2 85  2863
 3 53  452
