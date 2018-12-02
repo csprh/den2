@@ -71,6 +71,7 @@ outPSNRBandsValid4_Orig120
 outPSNRBandsValid4_Orig
 
 function outPSNRMean = multiModelDenoise1(baseDir, nameOfModel,  modelDir, thisBand, validInds, orig)
+validInds =[96 2863 564 918 2410 3200 823 1900 1484 258 57 1563 410 3184 1820 1107 208 2400 800 2945 2000 460 1121 111 891 471 1552 2000 2647 2410];
 
 load borders;
 allIndices = 1:30;
