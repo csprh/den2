@@ -42,15 +42,13 @@ baseDir = [scratchDir '/Valid3/'];
 modelDir = [scratchDir '/Models/'];
 
 psnrInds = 0;
-
-for epochs = 30:5:120
+for epochs = 30:5:50
     psnrInds = psnrInds + 1;
     nameOfModel = ['out-epoch-' num2str(epochs) '.mat']; 
-    outPSNR1(psnrInds) = multiModelDenoise1(baseDir, nameOfModel,  modelDir, 1, validInds(:,3));
-    outPSNR1
-    save outPSNR1 outPSNR1
+    outPSNR6f(psnrInds) = multiModelDenoise1(baseDir, nameOfModel,  modelDir, 6, validInds(:,3));
+    outPSNR6f
+    save outPSNR6f outPSNR6f
 end
-
 
 
 
@@ -58,7 +56,7 @@ function outPSNRMean = multiModelDenoise1(baseDir, nameOfModel,  modelDir, thisB
 
 load borders;
 allIndices = 1:30;
-modName = ['model_0_' num2str(thisBand) '/' nameOfModel];
+modName = ['modelFin_0_' num2str(thisBand) '/' nameOfModel];
 lowEdge = borders(thisBand); highEdge = borders(thisBand+1);
 bandIms = allIndices((validInds>=lowEdge)&(validInds<highEdge))
 for i = 1 : length(bandIms)
