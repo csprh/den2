@@ -43,15 +43,16 @@ theseInds = inds(:,2);
 
 
 for ii = 1:30
+    ii
     thisInd = theseInds(ii);
-    imName = ['Image_' num2str(thisInd) '.png']
-    thisImName = ['Test_Image_' num2str(ii) '.png']
+    imName = ['Image_' num2str(thisInd) '.png'];
+    thisImName = ['Test_Image_' num2str(ii) '.png'];
     
-    NoisyImageName = getThisPath(baseDir,classesA,imName,'Noisy/')
-    CleanImageName = getThisPath(baseDir,classesA,imName,'Clean/')
+    NoisyImageName = getThisPath(baseDir,classesA,imName,'Noisy/');
+    CleanImageName = getThisPath(baseDir,classesA,imName,'Clean/');
     
-    NoisyImage = imread(NoisyImageName)
-    NoisyImage = imcrop(NoisyImage, [1+1024 1 1023 1023])
+    NoisyImage = imread(NoisyImageName);
+    NoisyImage = imcrop(NoisyImage, [1+1024 1 1023 1023]);
     imwrite(NoisyImage,[outDirNoisy thisImName]);
     
     CleanImage = imread(CleanImageName);
