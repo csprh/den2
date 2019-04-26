@@ -1,5 +1,6 @@
 *.mat
 *.png
+!sigma=25.mat
 !theseIndices.mat
 !testInds.mat
 !model_Huwei_All-epoch-19.mat
