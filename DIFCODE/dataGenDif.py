@@ -75,8 +75,8 @@ def datagenerator(origDir, noiseDir, denoiseDir0, denoiseDir1):
     dataN = []
     data0 = []
     data1 = []# generate patches
-    #for i in range(len(file_list)):
-    for i in range(10):
+    for i in range(len(file_list)):
+    #for i in range(10):
         head, tail = os.path.split(file_list[i])
         orig = file_list[i]
         noise = noiseDir + tail

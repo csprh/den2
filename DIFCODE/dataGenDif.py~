@@ -99,10 +99,8 @@ def datagenerator(origDir, noiseDir, denoiseDir0, denoiseDir1):
     data0 = postProc(data0)
     data1 = postProc(data1)
 
-    y = [dataN, data0, data1]
-    x = data0;
     print('^_^-training data finished-^_^')
-    return x, y
+    return dataO, dataN, data0, data1
 
 def postProc(data):
     data = np.array(data, dtype='uint8')
