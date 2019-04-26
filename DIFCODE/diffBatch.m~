@@ -10,7 +10,7 @@ if ismac
 
     run /Users/csprh/Dlaptop/MATLAB/TOOLBOXES/matconvnet-1.0-beta25/matlab/vl_setupnn
 else
-    baseDir = '/home/cosc/csprh/linux/code/den2/DIFCODE/data/';
+    baseDir = '/mnt/storage/home/csprh/scratch/HAB/Huwei/Train/';
     run /home/cosc/csprh/linux/code/matconvnet-1.0-beta25/matlab/vl_setupnn
 
 end
