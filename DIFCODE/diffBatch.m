@@ -2,8 +2,8 @@ function diffBatch;
 
 addpath('../BM3D');
 addpath('../LASIP');
-addpath('../DNCNN/model/specifics');
-addpath('../DNCNN/utilities');
+addpath('../DnCNN/model/specifics');
+addpath('../DnCNN/utilities');
 
 if ismac
     baseDir = '/Users/csprh/Dlaptop/MATLAB/MYCODE/DENOISE/den2/data/';
