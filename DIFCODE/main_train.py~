@@ -161,13 +161,17 @@ if __name__ == '__main__':
     model.compile(optimizer=Adam(0.001), loss=sum_squared_error)
 
     # use call back functions
-    checkpointer = ModelCheckpoint(os.path.join(save_dir,'model_{epoch:03d}.hdf5'),
+    checkpointer = ModelCheckpoint(os.path.join(save_dir,'model_new_{epoch:03d}.hdf5'),
                 verbose=1, save_weights_only=False, period=args.save_every)
     csv_logger = CSVLogger(os.path.join(save_dir,'log.csv'), append=True, separator=',')
     lr_scheduler = LearningRateScheduler(lr_schedule)
 
+    #history = model.fit_generator(train_datagen(batch_size=args.batch_size),
+    #            steps_per_epoch=2000, epochs=args.epoch, verbose=1, initial_epoch=initial_epoch,
+    #            callbacks=[checkpointer,csv_logger,lr_scheduler])
+
     history = model.fit_generator(train_datagen(batch_size=args.batch_size),
-                steps_per_epoch=2000, epochs=args.epoch, verbose=1, initial_epoch=initial_epoch,
+                steps_per_epoch=200, epochs=args.epoch, verbose=1, initial_epoch=initial_epoch,
                 callbacks=[checkpointer,csv_logger,lr_scheduler])
 
 
