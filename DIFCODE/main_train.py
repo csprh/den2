@@ -166,8 +166,12 @@ if __name__ == '__main__':
     csv_logger = CSVLogger(os.path.join(save_dir,'log.csv'), append=True, separator=',')
     lr_scheduler = LearningRateScheduler(lr_schedule)
 
+    #history = model.fit_generator(train_datagen(batch_size=args.batch_size),
+    #            steps_per_epoch=2000, epochs=args.epoch, verbose=1, initial_epoch=initial_epoch,
+    #            callbacks=[checkpointer,csv_logger,lr_scheduler])
+
     history = model.fit_generator(train_datagen(batch_size=args.batch_size),
-                steps_per_epoch=2000, epochs=args.epoch, verbose=1, initial_epoch=initial_epoch,
+                 epochs=args.epoch, verbose=1, initial_epoch=initial_epoch,
                 callbacks=[checkpointer,csv_logger,lr_scheduler])
 
 
