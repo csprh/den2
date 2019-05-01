@@ -25,7 +25,7 @@ import numpy as np
 from keras.models import load_model, model_from_json
 from skimage.measure import compare_psnr, compare_ssim
 from skimage.io import imread, imsave
-
+from keras.preprocessing import image
 
 def parse_args():
     parser = argparse.ArgumentParser()
