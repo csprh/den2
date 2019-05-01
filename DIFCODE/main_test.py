@@ -97,19 +97,21 @@ if __name__ == '__main__':
                 #d0 = np.array(imread(os.path.join(args.orig_dir,set_cur,'Denoise0',im)), dtype=np.float32) / 255.0
                 #d1 = np.array(imread(os.path.join(args.set_dir,set_cur,'Denoise1',im)), dtype=np.float32) / 255.0
 
-                x = image.load_img(os.path.join(args.orig_dir,set_cur,im),grayscale=True); x = image.img_to_array(x)
-                y = image.load_img(os.path.join(args.set_dir,set_cur,'NoiseOrigs',im),grayscale=True); y = image.img_to_array(y)
-                d0 = image.load_img(os.path.join(args.set_dir,set_cur,'Denoise0',im),grayscale=True); d0 = image.img_to_array(d0)
-                d1 = image.load_img(os.path.join(args.set_dir,set_cur,'Denoise1',im),grayscale=True); d1 = image.img_to_array(d1)
+        #        data1 = dataO.astype('float32')/255.0
+                x = image.load_img(os.path.join(args.orig_dir,set_cur,im),grayscale=True); x = image.img_to_array(x)/255.0
+                y = image.load_img(os.path.join(args.set_dir,set_cur,'NoiseOrigs',im),grayscale=True); y = image.img_to_array(y)/255.0
+                d0 = image.load_img(os.path.join(args.set_dir,set_cur,'Denoise0',im),grayscale=True); d0 = image.img_to_array(d0)/255.0
+                d1 = image.load_img(os.path.join(args.set_dir,set_cur,'Denoise1',im),grayscale=True); d1 = image.img_to_array(d1)/255.0
                 yt  = to_tensor(y)
                 d0t  = to_tensor(d0)
                 d1t  = to_tensor(d1)
                 start_time = time.time()
-                x_ = model.predict([d0t/255,d1t/255,yt/255]) # inference
+                x_ = model.predict([d0t,d1t,yt]) # inference
                 elapsed_time = time.time() - start_time
                 print('%10s : %10s : %2.4f second'%(set_cur,im,elapsed_time))
                 x_=from_tensor(x_)
                 psnr_x_ = compare_psnr(np.squeeze(x), x_)
+                save_result(x_,'test1.png')
 
                 psnr_x_ = compare_psnr(x, x_)
                 psnr_d0 = compare_psnr(x, d0)
