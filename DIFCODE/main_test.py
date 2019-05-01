@@ -29,7 +29,8 @@ from skimage.io import imread, imsave
 
 def parse_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--set_dir', default='data/Test', type=str, help='directory of test dataset')
+    parser.add_argument('--set_dir', default='../data/AWGN25/Test', type=str, help='directory of test dataset')
+    parser.add_argument('--orig_dir', default='../data/Origs', type=str, help='directory of test dataset')
     parser.add_argument('--set_names', default=['Set68','Set12'], type=list, help='name of test dataset')
     parser.add_argument('--sigma', default=25, type=int, help='noise level')
     parser.add_argument('--model_dir', default=os.path.join('models','DnCNN_sigma25'), type=str, help='directory of the model')
@@ -90,13 +91,18 @@ if __name__ == '__main__':
         for im in os.listdir(os.path.join(args.set_dir,set_cur)):
             if im.endswith(".jpg") or im.endswith(".bmp") or im.endswith(".png"):
                 #x = np.array(Image.open(os.path.join(args.set_dir,set_cur,im)), dtype='float32') / 255.0
-                x = np.array(imread(os.path.join(args.set_dir,set_cur,im)), dtype=np.float32) / 255.0
-                np.random.seed(seed=0) # for reproducibility
-                y = x + np.random.normal(0, args.sigma/255.0, x.shape) # Add Gaussian noise without clipping
-                y = y.astype(np.float32)
-                y_  = to_tensor(y)
+                #x = np.array(imread(os.path.join(args.orig_dir,set_cur,im)), dtype=np.float32) / 255.0
+                #y = np.array(imread(os.path.join(args.set_dir,set_cur,'NoiseOrigs',im)), dtype=np.float32) / 255.0
+                #d0 = np.array(imread(os.path.join(args.orig_dir,set_cur,'Denoise0',im)), dtype=np.float32) / 255.0
+                #d1 = np.array(imread(os.path.join(args.set_dir,set_cur,'Denoise1',im)), dtype=np.float32) / 255.0
+
+                x = image.load_img(os.path.join(args.orig_dir,set_cur,im),grayscale=True); x = image.img_to_array(x)
+                y = image.load_img(os.path.join(args.set_dir,set_cur,'NoiseOrigs',im),grayscale=True); y = image.img_to_array(y)
+                d0 = image.load_img(os.path.join(args.set_dir,set_cur,'Denoise0',im),grayscale=True); d0 = image.img_to_array(d0)
+                d1 = image.load_img(os.path.join(args.set_dir,set_cur,'Denoise1',im),grayscale=True); d1 = image.img_to_array(d1)
+                #y_  = to_tensor(y)
                 start_time = time.time()
-                x_ = model.predict(y_) # inference
+                x_ = model.predict([d0,d1,y]) # inference
                 elapsed_time = time.time() - start_time
                 print('%10s : %10s : %2.4f second'%(set_cur,im,elapsed_time))
                 x_=from_tensor(x_)
