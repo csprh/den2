@@ -75,8 +75,8 @@ if __name__ == '__main__':
 
     args = parse_args()
 
-        model = load_model(os.path.join(args.model_dir, args.model_name),compile=False)
-        log('load trained model')
+    model = load_model(os.path.join(args.model_dir, args.model_name),compile=False)
+    log('load trained model')
 
     if not os.path.exists(args.result_dir):
         os.mkdir(args.result_dir)
