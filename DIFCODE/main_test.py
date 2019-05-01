@@ -105,11 +105,11 @@ if __name__ == '__main__':
                 d0t  = to_tensor(d0)
                 d1t  = to_tensor(d1)
                 start_time = time.time()
-                x_ = model.predict([d0t,d1t,yt]) # inference
+                x_ = model.predict([d0t/255,d1t/255,yt/255]) # inference
                 elapsed_time = time.time() - start_time
                 print('%10s : %10s : %2.4f second'%(set_cur,im,elapsed_time))
                 x_=from_tensor(x_)
-                psnr_x_ = compare_psnr(x, x_)
+                psnr_x_ = compare_psnr(np.squeeze(x), x_)
 
                 psnr_x_ = compare_psnr(x, x_)
                 psnr_d0 = compare_psnr(x, d0)

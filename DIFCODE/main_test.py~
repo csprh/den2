@@ -101,15 +101,19 @@ if __name__ == '__main__':
                 y = image.load_img(os.path.join(args.set_dir,set_cur,'NoiseOrigs',im),grayscale=True); y = image.img_to_array(y)
                 d0 = image.load_img(os.path.join(args.set_dir,set_cur,'Denoise0',im),grayscale=True); d0 = image.img_to_array(d0)
                 d1 = image.load_img(os.path.join(args.set_dir,set_cur,'Denoise1',im),grayscale=True); d1 = image.img_to_array(d1)
-                xt  = to_tensor(y)
+                yt  = to_tensor(y)
                 d0t  = to_tensor(d0)
                 d1t  = to_tensor(d1)
                 start_time = time.time()
-                x_ = model.predict([d0,d1,y]) # inference
+                x_ = model.predict([d0t,d1t,yt]) # inference
                 elapsed_time = time.time() - start_time
                 print('%10s : %10s : %2.4f second'%(set_cur,im,elapsed_time))
                 x_=from_tensor(x_)
                 psnr_x_ = compare_psnr(x, x_)
+
+                psnr_x_ = compare_psnr(x, x_)
+                psnr_d0 = compare_psnr(x, d0)
+                psnr_d1 = compare_psnr(x, d1)
                 ssim_x_ = compare_ssim(x, x_)
                 if args.save_result:
                     name, ext = os.path.splitext(im)
