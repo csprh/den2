@@ -30,7 +30,7 @@ from skimage.io import imread, imsave
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('--set_dir', default='../data/AWGN25/Test', type=str, help='directory of test dataset')
-    parser.add_argument('--orig_dir', default='../data/Origs', type=str, help='directory of test dataset')
+    parser.add_argument('--orig_dir', default='../data/Origs/Test', type=str, help='directory of test dataset')
     parser.add_argument('--set_names', default=['Set68','Set12'], type=list, help='name of test dataset')
     parser.add_argument('--sigma', default=25, type=int, help='noise level')
     parser.add_argument('--model_dir', default=os.path.join('models','difCNN_sigma25'), type=str, help='directory of the model')

@@ -89,7 +89,7 @@ if __name__ == '__main__':
         psnrs = []
         ssims = []
 
-        for im in os.listdir(os.path.join(args.set_dir,set_cur)):
+        for im in os.listdir(os.path.join(args.orig_dir,set_cur)):
             if im.endswith(".jpg") or im.endswith(".bmp") or im.endswith(".png"):
                 #x = np.array(Image.open(os.path.join(args.set_dir,set_cur,im)), dtype='float32') / 255.0
                 #x = np.array(imread(os.path.join(args.orig_dir,set_cur,im)), dtype=np.float32) / 255.0
