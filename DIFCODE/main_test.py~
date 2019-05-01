@@ -34,7 +34,7 @@ def parse_args():
     parser.add_argument('--set_names', default=['Set68','Set12'], type=list, help='name of test dataset')
     parser.add_argument('--sigma', default=25, type=int, help='noise level')
     parser.add_argument('--model_dir', default=os.path.join('models','difCNN_sigma25'), type=str, help='directory of the model')
-    parser.add_argument('--model_name', default='model_new_038.hdf5', type=str, help='the model name')
+    parser.add_argument('--model_name', default='model_new_037.hdf5', type=str, help='the model name')
     parser.add_argument('--result_dir', default='results', type=str, help='directory of results')
     parser.add_argument('--save_result', default=0, type=int, help='save the denoised image, 1 or 0')
     return parser.parse_args()
