@@ -101,7 +101,9 @@ if __name__ == '__main__':
                 y = image.load_img(os.path.join(args.set_dir,set_cur,'NoiseOrigs',im),grayscale=True); y = image.img_to_array(y)
                 d0 = image.load_img(os.path.join(args.set_dir,set_cur,'Denoise0',im),grayscale=True); d0 = image.img_to_array(d0)
                 d1 = image.load_img(os.path.join(args.set_dir,set_cur,'Denoise1',im),grayscale=True); d1 = image.img_to_array(d1)
-                #y_  = to_tensor(y)
+                xt  = to_tensor(y)
+                d0t  = to_tensor(d0)
+                d1t  = to_tensor(d1)
                 start_time = time.time()
                 x_ = model.predict([d0,d1,y]) # inference
                 elapsed_time = time.time() - start_time
