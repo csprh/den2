@@ -6,7 +6,7 @@ from keras.layers import Dense
 from keras.layers import Flatten
 from keras.layers.convolutional import Conv2D
 from keras.layers.pooling import MaxPooling2D
-from keras.layers.merge import concatenate, Add
+from keras.layers.merge import concatenate, Add, Average
 import numpy as np
 #import tensorflow as tf
 from keras.models import *
