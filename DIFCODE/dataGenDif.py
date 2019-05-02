@@ -111,7 +111,7 @@ def postProc(data):
 
 if __name__ == '__main__':
     import pudb; pu.db
-    baseDir = '/Users/csprh/Dlaptop/MATLAB/MYCODE/DENOISE/den2/data/'
+    baseDir = '/home/cosc/csprh/linux/code/den2/data/'
     origDir = baseDir + 'Origs/Train/'
     noisyDir = baseDir + 'AWGN25/Train/'
     noiseDir = noisyDir +  'NoiseOrigs/';
