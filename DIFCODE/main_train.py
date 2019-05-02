@@ -31,7 +31,7 @@ parser.add_argument('--train_data', default='/home/cosc/csprh/linux/code/den2/da
 parser.add_argument('--sigma', default=25, type=int, help='noise level')
 parser.add_argument('--epoch', default=300, type=int, help='number of train epoches')
 parser.add_argument('--lr', default=1e-3, type=float, help='initial learning rate for Adam')
-parser.add_argument('--save_every', default=1, type=int, help='save model at every x epoches')
+parser.add_argument('--save_every', default=5, type=int, help='save model at every x epoches')
 args = parser.parse_args()
 
 
