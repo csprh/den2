@@ -82,9 +82,14 @@ def datagenerator(origDir, noiseDir, denoiseDir0, denoiseDir1):
         noise = noiseDir + tail
         denoise0 = denoiseDir0 + tail
         denoise1 = denoiseDir1 + tail
+        thisseed = np.random.randint(0, 10000, 1)
+        np.random.seed(thisseed)
         patchO = gen_patches(orig)
+        np.random.seed(thisseed)
         patchN = gen_patches(noise)
+        np.random.seed(thisseed)
         patch0 = gen_patches(denoise0)
+        np.random.seed(thisseed)
         patch1 = gen_patches(denoise1)
 
         dataO.append(patchO)
