@@ -122,9 +122,9 @@ def train_datagen(epoch_iter=2000,epoch_num=5,batch_size=128,baseDir=args.train_
             #assert len(data1)%args.batch_size ==0, \
             log('make sure the last iteration has a full batchsize, this is important if you use batch normalization!')
             dataO = dataO.astype('float32')/255.0
-            dataN = dataO.astype('float32')/255.0
-            data0 = dataO.astype('float32')/255.0
-            data1 = dataO.astype('float32')/255.0
+            dataN = dataN.astype('float32')/255.0
+            data0 = data0.astype('float32')/255.0
+            data1 = data1.astype('float32')/255.0
             indices = list(range(dataO.shape[0]))
             n_count = 1
         for _ in range(epoch_num):
