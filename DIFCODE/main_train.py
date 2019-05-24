@@ -80,7 +80,7 @@ def findLastCheckpoint(save_dir):
     if file_list:
         epochs_exist = []
         for file_ in file_list:
-            result = re.findall(".*model_(.*).hdf5.*",file_)
+            result = re.findall(".*model_new_(.*).hdf5.*",file_)
             #print(result[0])
             epochs_exist.append(int(result[0]))
         initial_epoch=max(epochs_exist)

@@ -68,11 +68,10 @@ def difCNN(depth,filters=64):
        x2 = Activation('relu')(x2)
     # last layer, Conv
     x2 = Conv2D(filters=1, kernel_size=(3,3), strides=(1,1), padding='same')(x2)
-    added = Average()([x1, x2])
-    sub = Subtract()([inpt3, added])   # input - noise
+    sub = Average()([x1, x2])
+    #sub = Subtract()([inpt3, added])   # input - noise
 
     model = Model(inputs=[inpt1, inpt2, inpt3], outputs=sub)
-
     return model
 
 def findLastCheckpoint(save_dir):
