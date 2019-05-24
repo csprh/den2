@@ -62,8 +62,8 @@ def gen_patches(file_name):
             #patches.append(x)
             # data aug
             for k in range(0, aug_times):
-                #thisx_aug = data_aug(thisx, mode=np.random.randint(0,8))
-                thisx_aug = data_aug(thisx, mode=0)
+                thisx_aug = data_aug(thisx, mode=np.random.randint(0,8))
+                #thisx_aug = data_aug(thisx, mode=0)
                 patches.append(thisx_aug)
 
     return patches
