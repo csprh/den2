@@ -134,7 +134,7 @@ def train_datagen(epoch_iter=2000,epoch_num=5,batch_size=128,baseDir=args.train_
                 batch_0 = data0[indices[i:i+batch_size]]
                 batch_1 = data1[indices[i:i+batch_size]]
 
-                x = [batch_0, batch_1, batch_N]
+                x = [batch_0, batch_1]
                 y = batch_O
                 yield  x,y
 
