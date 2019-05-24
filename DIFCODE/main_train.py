@@ -154,7 +154,7 @@ if __name__ == '__main__':
     initial_epoch = findLastCheckpoint(save_dir=save_dir)
     if initial_epoch > 0:
         print('resuming by loading epoch %03d'%initial_epoch)
-        model = load_model(os.path.join(save_dir,'model_%03d.hdf5'%initial_epoch), compile=False)
+        model = load_model(os.path.join(save_dir,'model_new_%03d.hdf5'%initial_epoch), compile=False)
 
     # compile the model
     model.compile(optimizer=Adam(0.001), loss=sum_squared_error)
