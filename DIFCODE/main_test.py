@@ -88,7 +88,7 @@ if __name__ == '__main__':
             os.mkdir(os.path.join(args.result_dir,set_cur))
         psnrs = []
         ssims = []
-
+        psnrs_d0 = []
         for im in os.listdir(os.path.join(args.orig_dir,set_cur)):
             if im.endswith(".jpg") or im.endswith(".bmp") or im.endswith(".png"):
                 #x = np.array(Image.open(os.path.join(args.set_dir,set_cur,im)), dtype='float32') / 255.0
@@ -112,7 +112,6 @@ if __name__ == '__main__':
                 x_=from_tensor(x_)
                 x_=np.clip(x_,0,1)
                 psnr_x_ = compare_psnr(np.squeeze(x), x_)
-                save_result(x_,'test1.png')
 
                 psnr_x_ = compare_psnr(np.squeeze(x), np.squeeze(x_))
                 psnr_d0 = compare_psnr(np.squeeze(x), np.squeeze(d0))
@@ -123,15 +122,19 @@ if __name__ == '__main__':
                     show(np.hstack((y,x_))) # show the image
                     save_result(x_,path=os.path.join(args.result_dir,set_cur,name+'_dncnn'+ext)) # save the denoised image
                 psnrs.append(psnr_x_)
+                psnrs_d0.append(psnr_d0)
                 ssims.append(ssim_x_)
 
         psnr_avg = np.mean(psnrs)
+        psnr_d0_avg = np.mean(psnrs_d0)
         ssim_avg = np.mean(ssims)
         psnrs.append(psnr_avg)
+        psnrs_d0.append(psnr_d0_avg)
         ssims.append(ssim_avg)
 
-        if args.save_result:
-            save_result(np.hstack((psnrs,ssims)),path=os.path.join(args.result_dir,set_cur,'results.txt'))
+        #if args.save_result:
+        save_result(np.hstack((psnrs,ssims)),path=os.path.join(args.result_dir,set_cur,'results.txt'))
+        save_result(np.hstack((psnrs_d0,ssims)),path=os.path.join(args.result_dir,set_cur,'results_d0.txt'))
 
         log('Datset: {0:10s} \n  PSNR = {1:2.2f}dB, SSIM = {2:1.4f}'.format(set_cur, psnr_avg, ssim_avg))
 
