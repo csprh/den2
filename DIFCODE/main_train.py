@@ -100,7 +100,7 @@ def lr_schedule(epoch):
     elif epoch<=80:
         lr = initial_lr/20
     else:
-        lr = initial_lr/40
+        lr = initial_lr/20
     log('current learning rate is %2.8f' %lr)
     return lr
 
