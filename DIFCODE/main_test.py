@@ -124,7 +124,7 @@ if __name__ == '__main__':
                 ssim_d1 = compare_ssim(np.squeeze(x), np.squeeze(d1))
                 if args.save_result:
                     name, ext = os.path.splitext(im)
-                    show(np.hstack((y,x_))) # show the image
+                    #show(np.hstack((y,x_))) # show the image
                     save_result(x_,path=os.path.join(args.result_dir,set_cur,name+'_fuse'+ext)) # save the denoised image
                 psnrs.append(psnr_x_)
                 psnrs_d0.append(psnr_d0)

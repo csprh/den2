@@ -87,9 +87,11 @@ if __name__ == '__main__':
         if not os.path.exists(os.path.join(args.result_dir,set_cur)):
             os.mkdir(os.path.join(args.result_dir,set_cur))
         psnrs = []
-        ssims = []
         psnrs_d0 = []
         psnrs_d1 = []
+        ssims = []
+        ssims_d0 = []
+        ssims_d1 = []
         for im in os.listdir(os.path.join(args.orig_dir,set_cur)):
             if im.endswith(".jpg") or im.endswith(".bmp") or im.endswith(".png"):
                 #x = np.array(Image.open(os.path.join(args.set_dir,set_cur,im)), dtype='float32') / 255.0
@@ -118,6 +120,8 @@ if __name__ == '__main__':
                 psnr_d0 = compare_psnr(np.squeeze(x), np.squeeze(d0))
                 psnr_d1 = compare_psnr(np.squeeze(x), np.squeeze(d1))
                 ssim_x_ = compare_ssim(np.squeeze(x), np.squeeze(x_))
+                ssim_d0 = compare_ssim(np.squeeze(x), np.squeeze(d0))
+                ssim_d1 = compare_ssim(np.squeeze(x), np.squeeze(d1))
                 if args.save_result:
                     name, ext = os.path.splitext(im)
                     show(np.hstack((y,x_))) # show the image
@@ -126,18 +130,13 @@ if __name__ == '__main__':
                 psnrs_d0.append(psnr_d0)
                 psnrs_d1.append(psnr_d1)
                 ssims.append(ssim_x_)
-
-        psnr_avg = np.mean(psnrs)
-        psnr_d0_avg = np.mean(psnrs_d0)
-        ssim_avg = np.mean(ssims)
-        psnrs.append(psnr_avg)
-        psnrs_d0.append(psnr_d0_avg)
-        ssims.append(ssim_avg)
+                ssims_d0.append(ssim_d0)
+                ssims_d1.append(ssim_d1)
 
         #if args.save_result:
         save_result(np.hstack((psnrs,ssims)),path=os.path.join(args.result_dir,set_cur,'results.txt'))
-        save_result(np.hstack((psnrs_d0,ssims)),path=os.path.join(args.result_dir,set_cur,'results_d0.txt'))
-        save_result(np.hstack((psnrs_d0,ssims)),path=os.path.join(args.result_dir,set_cur,'results_d1.txt'))
+        save_result(np.hstack((psnrs_d0,ssims_d0)),path=os.path.join(args.result_dir,set_cur,'results_d0.txt'))
+        save_result(np.hstack((psnrs_d1,ssims_d1)),path=os.path.join(args.result_dir,set_cur,'results_d1.txt'))
 
         log('Datset: {0:10s} \n  PSNR = {1:2.2f}dB, SSIM = {2:1.4f}'.format(set_cur, psnr_avg, ssim_avg))
 
