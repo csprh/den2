@@ -24,7 +24,7 @@ opts.bnormLearningRate= 0;
 opts.solver           = 'Adam';
 opts.numberImdb       = 1;
 
-opts.imdbDir          = 'data/TrainingPatches/imdb_InSAR_1_0.mat';
+opts.imdbDir          = 'data/TrainingPatches/imdb_40_128.mat';
 
 opts.gradientClipping = false; %%% set 'true' to prevent exploding gradients in the beginning.
 opts.backPropDepth    = Inf;
@@ -32,7 +32,7 @@ opts.backPropDepth    = Inf;
 %%%   Initialize model and load data
 %%%-------------------------------------------------------------------------
 %%%  model
-net  = feval('DnCNN_init_model_InSAR');
+net  = feval('DnCNN_init_model_Huwei_All');
 
 %%%  load data
 opts.expDir      = fullfile('data', opts.modelName);
