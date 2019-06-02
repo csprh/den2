@@ -6,7 +6,8 @@ rng('default')
 
 global sigma; %%% noise level
 sigma = 25;
-run /home/cosc/csprh/linux/code/matconvnet-1.0-beta25/matlab/vl_setupn
+
+run /home/cosc/csprh/linux/code/matconvnet-1.0-beta25/matlab/vl_setupnn
 %%%-------------------------------------------------------------------------
 %%% Configuration
 %%%-------------------------------------------------------------------------

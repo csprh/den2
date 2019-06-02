@@ -1,5 +1,5 @@
 
-function net = DnCNN_init_model_InSAR
+function net = DnCNN_init_model_Huwei_All
 
 %%% 17 layers
 b_min = 0.025;
