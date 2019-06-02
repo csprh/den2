@@ -24,13 +24,11 @@ step          = 0;
 count   = 0;
 
 
-theseNHO = inds.NHO;
+theseNHO = 350;
 basePATH = ['/space/csprh/inSAR/'];
 
 for ii = 1:length(theseNHO)
-%for ii = 1:5
-    thisInd = theseNHO(ii);
-    %thisInd = 663;
+
     imName1 = sprintf('out/OOO%05d.png',ii); 
     imName2 = sprintf('grad/G%05d.png',ii);
     filepaths{ii}.Clean = [basePATH imName1]; 

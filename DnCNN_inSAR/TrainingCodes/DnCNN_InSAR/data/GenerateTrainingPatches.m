@@ -27,7 +27,7 @@ count   = 0;
 theseNHO = 350;
 basePATH = ['/space/csprh/inSAR/'];
 
-for ii = 1:length(theseNHO)
+for ii = 1:theseNHO
 
     imName1 = sprintf('out/OOO%05d.png',ii); 
     imName2 = sprintf('grad/G%05d.png',ii);
