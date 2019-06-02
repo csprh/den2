@@ -1,0 +1,25 @@
+Lmod has detected the following error: The following module(s) are unknown:
+"apps/matlab/20178a"
+
+Please check the spelling or version number. Also try "module spider ..."
+
+
+
+
+/mnt/storage/home/csprh/code/HUAWEI/DNCNN/TrainingCodes/DnCNNHuawei
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2017 The MathWorks, Inc.
+                   R2017a (9.2.0.556344) 64-bit (glnxa64)
+                               March 27, 2017
+
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+{Error using feval
+Undefined function or variable 'DnCNN_init_model_Huwei_All50'.
+
+Error in Demo_Train_model__Huwei_All (line 33)
+net  = feval(['DnCNN_init_',opts.modelName]);
+} 
