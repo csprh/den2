@@ -32,7 +32,7 @@ opts.backPropDepth    = Inf;
 %%%   Initialize model and load data
 %%%-------------------------------------------------------------------------
 %%%  model
-net  = feval('DnCNN_init_model_Huwei_All');
+net  = feval('DnCNN_init_model_InSAR');
 
 %%%  load data
 opts.expDir      = fullfile('data', opts.modelName);
