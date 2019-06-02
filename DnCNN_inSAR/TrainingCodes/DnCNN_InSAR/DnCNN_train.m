@@ -322,7 +322,7 @@ labels = imdb.cleaninputs(:,:,:,batch);
 %rng('shuffle');
 mode = randperm(8);
 inputs = data_augmentation(inputs, mode(1));
-labels = data_augmentation(lables, mode(1));
+labels = data_augmentation(labels, mode(1));
 %labels  = sigma/255*randn(size(inputs),'single');
 %inputs = inputs + labels;
 
