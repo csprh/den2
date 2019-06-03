@@ -50,7 +50,7 @@ scaledgy = ((scaledgy/255.0)*(2*pi)))-pi;
 
 wrappedPhaseIn = ((wRGB/255.0)*(2*pi)))-pi; 
 
-phat = intgrad2(scaledgx,scaledgy,[],[],wrappedPhaseI(0));
+phat = intgrad2(scaledgx,scaledgy,[],[],wrappedPhaseIn(0));
 phat_wrapped = angle(exp(1i*phat));
 
 outImWrap = round(255*(phat_wrapped+pi)/(2*pi));
