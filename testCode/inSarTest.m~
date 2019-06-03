@@ -27,10 +27,10 @@ net = vl_simplenn_tidy(net);
 net.layers = net.layers(1:end-1);
 net = vl_simplenn_tidy(net);
 
-numStrOutImGrad = sprintf([inputDir 'OOO%05d.png'],ii);
-numStrOutDeform = sprintf([deformDir 'D%05d.png'],ii);
-numStrOutWrappedIn = sprintf([wrappedDir 'O%05d.png'],ii); 
-outStr = sprintf([hatDir 'H%05d.png'],ii);
+numStrOutImGrad = sprintf([inputDir 'OOO%05d.png'],ImNum);
+numStrOutDeform = sprintf([deformDir 'D%05d.png'],ImNum);
+numStrOutWrappedIn = sprintf([wrappedDir 'O%05d.png'],ImNum); 
+outStr = sprintf([hatDir 'H%05d.png'],ImNum);
 
 zRGB = im2double(imread(numStrOutImGrad));
 yRGB = im2double(imread(numStrOutDeform));
