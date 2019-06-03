@@ -28,7 +28,7 @@ net.layers = net.layers(1:end-1);
 net = vl_simplenn_tidy(net);
 
 numStrOutImGrad = sprintf([inputDir 'OOO%05d.png'],ImNum);
-numStrOutDeform = sprintf([deformDir 'D%05d.png'],ImNum);
+numStrOutDeform = sprintf([deformDir 'G%05d.png'],ImNum);
 numStrOutWrappedIn = sprintf([wrappedDir 'O%05d.png'],ImNum); 
 outStr = sprintf([hatDir 'H%05d.png'],ImNum);
 
