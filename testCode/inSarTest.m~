@@ -15,8 +15,7 @@ modName = '/home/cosc/csprh/linux/code/den2/DnCNN_inSAR/TrainingCodes/DnCNN_InSA
 
 thisInd = 0;
 for ii = 350 : 350+50
-    outPSNR(ii) = thisDenoise(ii, deformDir, inputDir, wrappedDir, hatDir,
-    testDir, modName);
+    outPSNR(ii) = thisDenoise(ii, deformDir, inputDir, wrappedDir, hatDir,  testDir, modName);
 end
 outPSNRMean = mean(outPSNR);
 

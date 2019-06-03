@@ -45,10 +45,10 @@ outIm = input - res(end).x;
 scaledgx = double(outIm(:,:,1));
 scaledgy = double(outIm(:,:,2));
 
-scaledgx = ((scaledgx/255.0)*(2*pi)))-pi;
-scaledgy = ((scaledgy/255.0)*(2*pi)))-pi;
+scaledgx = ((scaledgx/255.0)*(2*pi))-pi;
+scaledgy = ((scaledgy/255.0)*(2*pi))-pi;
 
-wrappedPhaseIn = ((wRGB/255.0)*(2*pi)))-pi; 
+wrappedPhaseIn = ((wRGB/255.0)*(2*pi))-pi; 
 
 phat = intgrad2(scaledgx,scaledgy,[],[],wrappedPhaseIn(0));
 phat_wrapped = angle(exp(1i*phat));
@@ -59,8 +59,8 @@ imwrite(uint8(outImWrap), outStr);
 refscaledgx = double(clean(:,:,1));
 refscaledgy = double(clean(:,:,2));
 
-refscaledgx = ((refscaledgx/255.0)*(2*pi)))-pi;
-refscaledgy = ((refscaledgy/255.0)*(2*pi)))-pi;
+refscaledgx = ((refscaledgx/255.0)*(2*pi))-pi;
+refscaledgy = ((refscaledgy/255.0)*(2*pi))-pi;
 PSNR = 0;
 %[PSNR, SSIM] = Cal_PSNRSSIM(255*clean,255*outIm,0,0);
 
