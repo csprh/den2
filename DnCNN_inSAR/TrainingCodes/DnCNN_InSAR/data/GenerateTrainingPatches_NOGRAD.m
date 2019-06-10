@@ -101,7 +101,7 @@ if ~exist(dataName,'file')
 end
 
 %%% save data
-save(fullfile(dataName,['imdb_',num2str(patchsize),'_',num2str(batchSize)]), 'inputs','cleaninputs','set','-v7.3')
+save(fullfile(dataName,['imdb_',num2str(patchsize),'_',num2str(batchSize) , 'NOGRAD']), 'inputs','cleaninputs','set','-v7.3')
 
 
 
