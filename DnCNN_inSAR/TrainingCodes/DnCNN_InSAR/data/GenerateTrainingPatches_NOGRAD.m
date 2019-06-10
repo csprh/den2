@@ -85,13 +85,13 @@ for i = 1 : length(filepaths)
     for x = 1+step : stride : (hei-patchsize+1)
         for y = 1+step :stride : (wid-patchsize+1)
             count       = count+1;
-            inputs(:, :, count)   = im_label(x : x+patchsize-1, y : y+patchsize-1);
-            cleaninputs(:, :,  count)   = cleanim_label(x : x+patchsize-1, y : y+patchsize-1);
+            inputs(:, :, : , count)   = im_label(x : x+patchsize-1, y : y+patchsize-1,:);
+            cleaninputs(:, :,  :, count)   = cleanim_label(x : x+patchsize-1, y : y+patchsize-1,:);
         end
     end
 end
 toc;
-set    = uint8(ones(1,size(inputs,3)));
+set    = uint8(ones(1,size(inputs,4)));
 
 disp('-------Datasize-------')
 disp([size(inputs,4),batchSize,size(inputs,4)/batchSize]);
