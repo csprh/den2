@@ -91,7 +91,7 @@ for i = 1 : length(filepaths)
     end
 end
 toc;
-
+set    = uint8(ones(1,size(inputs,3)));
 
 disp('-------Datasize-------')
 disp([size(inputs,4),batchSize,size(inputs,4)/batchSize]);
