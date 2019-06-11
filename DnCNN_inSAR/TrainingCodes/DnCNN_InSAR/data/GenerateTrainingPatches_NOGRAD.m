@@ -29,8 +29,8 @@ basePATH = '/space/csprh/inSAR/';
 
 for ii = 1:theseNHO
 
-    imName1 = sprintf('noGrad/DC%05d.png',ii); 
-    imName2 = sprintf('noGrad/OC%05d.png',ii);
+    imName1 = sprintf('noGrad/D%05d.png',ii); 
+    imName2 = sprintf('noGrad/O%05d.png',ii);
     filepaths{ii}.Clean = [basePATH imName1]; 
     filepaths{ii}.Noisy = [basePATH imName2]; 
 end
