@@ -318,7 +318,7 @@ function [inputs,labels] = getSimpleNNBatch(imdb, batch)
 %%%-------------------------------------------------------------------------
 global sigma;
 inputs = imdb.inputs(:,:,:,batch);
-labels = imdb.inputs(:,:,:,batch)-imdb.cleaninputs(:,:,:,batch);
+labels = imdb.cleaninputs(:,:,:,batch);
 %rng('shuffle');
 mode = randperm(8);
 inputs = data_augmentation(inputs, mode(1));
