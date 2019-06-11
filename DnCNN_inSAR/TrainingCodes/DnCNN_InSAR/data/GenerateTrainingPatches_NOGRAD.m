@@ -29,8 +29,8 @@ basePATH = '/space/csprh/inSAR/';
 
 for ii = 1:theseNHO
 
-    imName1 = sprintf('out/O%05d.png',ii); 
-    imName2 = sprintf('deform2/D%05d.png',ii);
+    imName1 = sprintf('noGrad/O%05d.png',ii); 
+    imName2 = sprintf('noGrad/D%05d.png',ii);
     filepaths{ii}.Clean = [basePATH imName1]; 
     filepaths{ii}.Noisy = [basePATH imName2]; 
 end
@@ -62,8 +62,8 @@ disp([numPatches,batchSize,numPatches/batchSize]);
 
 %pause;
 
-inputs  = zeros(patchsize, patchsize,  numPatches,'single'); % this is fast
-cleaninputs  = zeros(patchsize, patchsize,  numPatches,'single'); % this is fast
+inputs  = zeros(patchsize, patchsize, 3, numPatches,'single'); % this is fast
+cleaninputs  = zeros(patchsize, patchsize, 3, numPatches,'single'); % this is fast
 count   = 0;
 tic;
 for i = 1 : length(filepaths)
@@ -85,8 +85,8 @@ for i = 1 : length(filepaths)
     for x = 1+step : stride : (hei-patchsize+1)
         for y = 1+step :stride : (wid-patchsize+1)
             count       = count+1;
-            inputs(:, :, : , count)   = im_label(x : x+patchsize-1, y : y+patchsize-1,:);
-            cleaninputs(:, :,  :, count)   = cleanim_label(x : x+patchsize-1, y : y+patchsize-1,:);
+            inputs(:, :, :, count)   = im_label(x : x+patchsize-1, y : y+patchsize-1,:);
+            cleaninputs(:, :, :, count)   = cleanim_label(x : x+patchsize-1, y : y+patchsize-1,:);
         end
     end
 end

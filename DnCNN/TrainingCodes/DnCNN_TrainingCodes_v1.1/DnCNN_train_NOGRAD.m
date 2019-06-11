@@ -44,7 +44,6 @@ opts.bnormLearningRate = 0;
 opts.conserveMemory = true;
 opts.mode = 'normal';
 opts.cudnn = true ;
-opts.cudnn = false ;
 opts.backPropDepth = +inf ;
 opts.skipForward = false;
 opts.numSubBatches = 1;
@@ -318,15 +317,11 @@ function [inputs,labels] = getSimpleNNBatch(imdb, batch)
 %%%-------------------------------------------------------------------------
 global sigma;
 inputs = imdb.inputs(:,:,:,batch);
-labels = imdb.cleaninputs(:,:,:,batch);
-%rng('shuffle');
+rng('shuffle');
 mode = randperm(8);
 inputs = data_augmentation(inputs, mode(1));
-labels = data_augmentation(labels, mode(1));
-%labels  = sigma/255*randn(size(inputs),'single');
-%inputs = inputs + labels;
-
-
+labels  = sigma/255*randn(size(inputs),'single');
+inputs = inputs + labels;
 
 function image = data_augmentation(image, mode)
 
