@@ -1,0 +1,39 @@
+# DIFCODE ([Keras](https://keras.io/))
+
+- A repository of tools to combine denoising algorithms
+
+
+# Base Denoising Algorithms
+
+- At the moment the model just tries to combine BM3D and DnCNN denoised images.
+
+
+- [Diffbatch]  `diffBatch.py`.
+
+This Matlab Code loops through all the test images.  It adds a set amount of AWGN (at
+the moment sigma = 25) and saves the noising image.  The noisy image needs to
+saved to comparisons need to be made. 
+
+BM3D and DnCNN denoising is then implemented on the noisy image and the results
+put into the output directories (Denoise0 = DnCNN and Denoise1 = BM3D).
+
+You will need to adjust the paths in this code to your machine, and install
+matconvnet and direct the path to it.
+
+- [Training]  `main_train.py`.
+
+This python code defines a combining CNN code and takes all the data from the
+input noisy image and the two denoised images to generate the output noise (to
+be subtracted from the input in training.
+
+- [Training]  `main_test.py`.
+
+This python code takes an input noisy image and two images denoised by BM3D and
+DnCNN and combines them with the trained network.
+
+# ISSUES
+
+This code does not work as yet.  The improvements in PSNR were due to the issues
+of clipping.  A better scenario would be to learn the mixing weight matrix (I
+think).
+
