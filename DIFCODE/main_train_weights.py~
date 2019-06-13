@@ -48,7 +48,7 @@ def difCNN(depth,filters=64):
     inpt2 = Input(shape=(None,None,1))
 
     # 1st layer, Conv+relu
-    x1 = Conv2D(filters=64, kernel_size=(3,3), strides=(1,1), padding='same')(inpt1)
+    x1 = Conv2D(filters=64, kernel_size=(3,3), strides=(1,1), padding='same')(inpt3)
     x1 = Activation('relu')(x1)
     # 15 layers, Conv+BN+relu
     for i in range(depth):
