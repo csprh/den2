@@ -10,7 +10,7 @@ from keras.layers.merge import concatenate, Add, Average
 import numpy as np
 #import tensorflow as tf
 from keras.models import *
-from keras.layers import  Input,Conv2D,BatchNormalization,Activation,Lambda,Subtract,Muliply
+from keras.layers import  Input,Conv2D,BatchNormalization,Activation,Lambda,Subtract,Multiply,Add
 
 import argparse
 import re
