@@ -48,7 +48,7 @@ def difCNN(depth,filters=64):
     inpt2 = Input(shape=(None,None,1))
 
     # 1st layer, Conv+relu
-    x1 = Conv2D(filters=64, kernel_size=(3,3), strides=(1,1), padding='same')(inpt1)
+    x1 = Conv2D(filters=64, kernel_size=(3,3), strides=(1,1), padding='same')(inpt3)
     x1 = Activation('relu')(x1)
     # 15 layers, Conv+BN+relu
     for i in range(depth):
@@ -130,7 +130,7 @@ def train_datagen(epoch_iter=2000,epoch_num=5,batch_size=128,baseDir=args.train_
                 batch_0 = data0[indices[i:i+batch_size]]
                 batch_1 = data1[indices[i:i+batch_size]]
 
-                x = [batch_0, batch_1]
+                x = [batch_0, batch_1, batch_N]
                 y = batch_O
                 yield  x,y
 
