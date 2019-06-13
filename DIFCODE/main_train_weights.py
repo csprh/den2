@@ -60,9 +60,9 @@ def difCNN(depth,filters=64):
 
     # first input model
 
-    w1 = Multiply()([x1, input2])
+    w1 = Multiply()([x1, inpt2])
     x1 = Lambda(lambda x: 1 - x)(x1)
-    w2 = Multiply()([x1, input3])
+    w2 = Multiply()([x1, inpt3])
     added = Add()([w1, w2])
 
     sub = Subtract()([inpt3, added])   # input - noise
