@@ -67,7 +67,7 @@ def difCNN(depth,filters=64):
 
     sub = Subtract()([inpt3, added])   # input - noise
 
-    model = Model(inputs=[inpt1, inpt2, inpt3], outputs=sub)
+    model = Model(inputs=[inpt1, inpt2, inpt3], outputs=added)
     return model
 
 def findLastCheckpoint(save_dir):

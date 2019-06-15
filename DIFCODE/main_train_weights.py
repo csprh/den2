@@ -60,7 +60,7 @@ def difCNN(depth,filters=64):
 
     # first input model
 
-    w1 = Multiply()([x1, inpt2])
+    w1 = Multiply()([x1, inpt1])
     x1 = Lambda(lambda x: 1 - x)(x1)
     w2 = Multiply()([x1, inpt3])
     added = Add()([w1, w2])
