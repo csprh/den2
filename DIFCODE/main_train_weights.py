@@ -62,7 +62,7 @@ def difCNN(depth,filters=64):
 
     w1 = Multiply()([x1, inpt1])
     x1 = Lambda(lambda x: 1 - x)(x1)
-    w2 = Multiply()([x1, inpt3])
+    w2 = Multiply()([x1, inpt2])
     added = Add()([w1, w2])
 
     sub = Subtract()([inpt3, added])   # input - noise
