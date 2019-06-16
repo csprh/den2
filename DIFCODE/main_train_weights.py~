@@ -55,9 +55,11 @@ def difCNN(depth,filters=64):
        x1 = Conv2D(filters=64, kernel_size=(3,3), strides=(1,1), padding='same')(x1)
        x1 = BatchNormalization(axis=-1, epsilon=1e-3)(x1)
        x1 = Activation('relu')(x1)
+       x1 = keras.backend.clip(x1, 0, 1)
     # last layer, Conv
     x1 = Conv2D(filters=1, kernel_size=(3,3), strides=(1,1), padding='same')(x1)
 
+    x1 = keras.backend.clip(x1, 0, 1)
     # first input model
     inpt1s = Subtract()([inpt3, inpt1])
     inpt2s = Subtract()([inpt3, inpt2])
