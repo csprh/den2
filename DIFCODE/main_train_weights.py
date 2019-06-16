@@ -59,11 +59,11 @@ def difCNN(depth,filters=64):
     x1 = Conv2D(filters=1, kernel_size=(3,3), strides=(1,1), padding='same')(x1)
 
     # first input model
-    inpt1 = Subtract()([inpt3, inpt1])
-    inpt2 = Subtract()([inpt3, inpt2])
-    w1 = Multiply()([x1, inpt1])
+    inpt1s = Subtract()([inpt3, inpt1])
+    inpt2s = Subtract()([inpt3, inpt2])
+    w1 = Multiply()([x1, inpt1s])
     x1 = Lambda(lambda x: 1 - x)(x1)
-    w2 = Multiply()([x1, inpt2])
+    w2 = Multiply()([x1, inpt2s])
     added = Add()([w1, w2])
 
     sub = Subtract()([inpt3, added])   # input - noise
