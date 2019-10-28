@@ -63,7 +63,7 @@ for i = 1:length(filePaths)
     output = input - res(end).x;
     output(output>1) = 1;
     output(output<0) = 0;
-    imwrite(fullfile(output, folderTestOut,filePaths(i).name));
+    imwrite(output, fullfile(folderTestOut,filePaths(i).name));
     
 end
 
