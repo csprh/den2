@@ -13,7 +13,7 @@ folderTestOut = '/space/csprh/WATER/material20190426/CLEAR/Out'
 folderModel = 'model'; 
 noiseSigma  = 45;  %%% image noise level
 showResult  = 1;
-useGPU      = 0;
+useGPU      = 1;
 pauseTime   = 1;
 
 
@@ -63,7 +63,7 @@ for i = 1:length(filePaths)
     output = input - res(end).x;
     output(output>1) = 1;
     output(output<0) = 0;
-    imwrite(fullfile(folderTestOut,filePaths(i).name),output);
+    imwrite(fullfile(output, folderTestOut,filePaths(i).name));
     
 end
 
