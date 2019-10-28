@@ -2,14 +2,14 @@
 %%% This is the testing code demo for color image (Gaussian) denoising.
 %%% The model is trained with 1) noise levels in [0 55]; 2) 432 training images.
 
-run /Users/csprh/Dlaptop/MATLAB/TOOLBOXES/matconvnet-1.0-beta25/matlab/vl_setupnn
-%run /home/cosc/csprh/linux/code/matconvnet-1.0-beta25/matlab/vl_setupnn
+%run /Users/csprh/Dlaptop/MATLAB/TOOLBOXES/matconvnet-1.0-beta25/matlab/vl_setupnn
+run /home/cosc/csprh/linux/code/matconvnet-1.0-beta25/matlab/vl_setupnn
 % clear; clc;
 addpath('utilities');
-%folderTest  = '/space/csprh/WATER/material20190426/CLEAR/PNGs';
-%folderTestOut = '/space/csprh/WATER/material20190426/CLEAR/Out'
-folderTest  = '/Users/csprh/Downloads/PNGs/PNGs'; %%% test dataset
-folderTestOut = '/Users/csprh/Downloads/PNGs/Out'
+folderTest  = '/space/csprh/WATER/material20190426/CLEAR/PNGs';
+folderTestOut = '/space/csprh/WATER/material20190426/CLEAR/Out'
+%folderTest  = '/Users/csprh/Downloads/PNGs/PNGs'; %%% test dataset
+%folderTestOut = '/Users/csprh/Downloads/PNGs/Out'
 folderModel = 'model'; 
 noiseSigma  = 45;  %%% image noise level
 showResult  = 1;
