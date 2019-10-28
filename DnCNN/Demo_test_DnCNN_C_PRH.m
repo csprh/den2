@@ -5,7 +5,7 @@
 run /Users/csprh/Dlaptop/MATLAB/TOOLBOXES/matconvnet-1.0-beta25/matlab/vl_setupnn
 %run /home/cosc/csprh/linux/code/matconvnet-1.0-beta25/matlab/vl_setupnn
 % clear; clc;
-%addpath('utilities');
+addpath('utilities');
 %folderTest  = '/space/csprh/WATER/material20190426/CLEAR/PNGs';
 %folderTestOut = '/space/csprh/WATER/material20190426/CLEAR/Out'
 folderTest  = '/Users/csprh/Downloads/PNGs/PNGs'; %%% test dataset
