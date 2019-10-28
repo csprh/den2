@@ -108,6 +108,7 @@ def train_datagen(epoch_iter=2000,epoch_num=5,batch_size=128,baseDir=args.train_
     while(True):
         n_count = 0
         if n_count == 0:
+
             origDir = baseDir + 'Origs/Train/'
             noisyDir = baseDir + 'AWGN25/Train/' #should adjust for different sigmas
             noiseDir = noisyDir +  'NoiseOrigs/'
