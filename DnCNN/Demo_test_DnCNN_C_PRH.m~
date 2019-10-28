@@ -3,7 +3,7 @@
 %%% The model is trained with 1) noise levels in [0 55]; 2) 432 training images.
 
 %run /Users/csprh/Dlaptop/MATLAB/TOOLBOXES/matconvnet-1.0-beta25/matlab/vl_setupnn
-run /home/cosc/csprh/linux/code/matconvnet-1.0-beta25/matlab/vl_setupnn
+run /mnt/storage/home/csprh/code/matconvnet-1.0-beta25i/matlab/vl_setupnn
 % clear; clc;
 %addpath('utilities');
 folderTest  = '/space/csprh/WATER/material20190426/CLEAR/PNGs';
