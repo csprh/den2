@@ -13,7 +13,7 @@ folderTestOut = '/space/csprh/WATER/material20190426/CLEAR/Out'
 folderModel = 'model'; 
 noiseSigma  = 45;  %%% image noise level
 showResult  = 1;
-useGPU      = 1;
+useGPU      = 0;
 pauseTime   = 1;
 
 
