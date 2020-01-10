@@ -134,26 +134,26 @@ def TF_Canny(img_tensor, minRate=0.10, maxRate=0.40,
 	return tf.squeeze(edges_final)
 
 
-#if __name__ == '__main__': # Test the above code
-#	import cv2
-#	import matplotlib.pyplot as plt
-#
-#	img = np.zeros((50,50)) #You need to load an IMG here
-#	img[0,0:10] = 255; img[1,0:8] = 255; img[2,0:6]=100; img[3,0:5]=100; img[4,0:4] = 100
-#	edges_opencv = cv2.Canny(np.uint8(img), 50, 100)
-#
-#	""" Test with Canny Edge Detection """
-#	input_img = tf.placeholder(tf.float32, [50,50])
-#	x_tensor = tf.expand_dims(tf.expand_dims(input_img, axis=0),-1)
-#	edges_tensor = TF_Canny(x_tensor, return_raw_edges=True)
-#
-#	with tf.Session() as sess: edges_tf = sess.run(edges_tensor, feed_dict={input_img:img})
-#
-#	plt.subplot(131), plt.imshow(img, cmap='gray')
-#	plt.title('Original Image'), plt.xticks([]), plt.yticks([])
-#	plt.subplot(132), plt.imshow(edges_opencv, cmap='gray')
-#	plt.title('Edges-OpenCV.Canny'), plt.xticks([]), plt.yticks([])
-#	plt.subplot(133), plt.imshow(edges_tf, cmap='gray')
-#	plt.title('Edges-TF_Canny'), plt.xticks([]), plt.yticks([])
-#	plt.tight_layout()
-#	plt.show()
+if __name__ == '__main__': # Test the above code
+	import cv2
+	import matplotlib.pyplot as plt
+
+	img = np.zeros((50,50)) #You need to load an IMG here
+	img[0,0:10] = 255; img[1,0:8] = 255; img[2,0:6]=100; img[3,0:5]=100; img[4,0:4] = 100
+	edges_opencv = cv2.Canny(np.uint8(img), 50, 100)
+
+	""" Test with Canny Edge Detection """
+	input_img = tf.placeholder(tf.float32, [50,50])
+	x_tensor = tf.expand_dims(tf.expand_dims(input_img, axis=0),-1)
+	edges_tensor = TF_Canny(x_tensor, return_raw_edges=True)
+
+	with tf.Session() as sess: edges_tf = sess.run(edges_tensor, feed_dict={input_img:img})
+
+	plt.subplot(131), plt.imshow(img, cmap='gray')
+	plt.title('Original Image'), plt.xticks([]), plt.yticks([])
+	plt.subplot(132), plt.imshow(edges_opencv, cmap='gray')
+	plt.title('Edges-OpenCV.Canny'), plt.xticks([]), plt.yticks([])
+	plt.subplot(133), plt.imshow(edges_tf, cmap='gray')
+	plt.title('Edges-TF_Canny'), plt.xticks([]), plt.yticks([])
+	plt.tight_layout()
+	plt.show()
