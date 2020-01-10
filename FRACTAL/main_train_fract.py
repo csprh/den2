@@ -140,8 +140,10 @@ def sum_squared_error(y_true, y_pred):
 # define loss
 def fract_error(y_true, y_pred):
 
+    tf_session = K.get_session()
     lamb = 1.0;
-    edges1 = feature.canny(y_pred)
+    im = y_pred.eval(session=tf_session)
+    edges1 = feature.canny(im)
     fd = fractal_dimension(edges1)
     return lamd*fd+K.sum(K.square(y_pred - y_true))/2
 
