@@ -145,9 +145,7 @@ if __name__ == '__main__': # Test the above code
     img[31:40,:]=100
     img[41:49,:]=255
 	edges_opencv = cv2.Canny(np.uint8(img), 50, 100)
-
-	""" Test with Canny Edge Detection """
-	input_img = tf.placeholder(tf.float32, [50,50])
+    input_img = tf.placeholder(tf.float32, [50,50])
 	x_tensor = tf.expand_dims(tf.expand_dims(input_img, axis=0),-1)
 	edges_tensor = TF_Canny(x_tensor, return_raw_edges=True)
 
