@@ -138,8 +138,12 @@ if __name__ == '__main__': # Test the above code
 	import cv2
 	import matplotlib.pyplot as plt
 
-	img = np.zeros((50,50)) #You need to load an IMG here
-	img[0,0:10] = 255; img[1,0:8] = 255; img[2,0:6]=100; img[3,0:5]=100; img[4,0:4] = 100
+    img = np.zeros((50,50)) #You need to load an IMG here
+    img[0:10,:]=255
+    img[11:20,:]=100
+    img[21:30,:]=255
+    img[31:40,:]=100
+    img[41:49,:]=255
 	edges_opencv = cv2.Canny(np.uint8(img), 50, 100)
 
 	""" Test with Canny Edge Detection """
