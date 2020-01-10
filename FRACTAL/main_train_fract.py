@@ -147,7 +147,7 @@ def fract_error(y_true, y_pred):
     #im = y_pred.eval(session=tf_session)
     edges1 = TF_Canny(y_pred)
     #fd = fractal_dimension(edges1)
-    return lamd*fd+K.sum(K.square(y_pred - y_true))/2
+    #return lamd*fd+K.sum(K.square(y_pred - y_true))/2
     return K.sum(K.square(y_pred - y_true))/2
 
 
