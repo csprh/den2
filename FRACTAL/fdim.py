@@ -49,6 +49,3 @@ def fractal_dimension(Z, threshold=0.5):
     coeffs = np.polyfit(np.log(sizes), np.log(counts), 1)
     return -coeffs[0]
 
-I = scipy.misc.imread("sierpinski.png")/256.0
-print("Minkowski–Bouligand dimension (computed): ", fractal_dimension(I))
-print("Haussdorf dimension (theoretical):        ", (np.log(3)/np.log(2)))
