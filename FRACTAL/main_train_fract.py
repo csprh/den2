@@ -35,6 +35,8 @@ import data_generator as dg
 import keras.backend as K
 from skimage import feature
 from fdim import fractal_dimension
+from Canny import TF_Canny
+
 
 ## Params
 parser = argparse.ArgumentParser()
@@ -140,12 +142,13 @@ def sum_squared_error(y_true, y_pred):
 # define loss
 def fract_error(y_true, y_pred):
 
-    tf_session = K.get_session()
-    lamb = 1.0;
-    im = y_pred.eval(session=tf_session)
-    edges1 = feature.canny(im)
-    fd = fractal_dimension(edges1)
+    #tf_session = K.get_session()
+    #lamb = 1.0;
+    #im = y_pred.eval(session=tf_session)
+    edges1 = TF_Canny(y_pred)
+    #fd = fractal_dimension(edges1)
     return lamd*fd+K.sum(K.square(y_pred - y_true))/2
+    return K.sum(K.square(y_pred - y_true))/2
 
 
 if __name__ == '__main__':
