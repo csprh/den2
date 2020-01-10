@@ -135,27 +135,26 @@ def TF_Canny(img_tensor, minRate=0.10, maxRate=0.40,
 
 
 if __name__ == '__main__': # Test the above code
-	import cv2
-	import matplotlib.pyplot as plt
-
-    img = np.zeros((50,50)) #You need to load an IMG here
+    import cv2
+    import matplotlib.pyplot as plt
+    img=np.zeros((50,50))
     img[0:10,:]=255
     img[11:20,:]=100
     img[21:30,:]=255
     img[31:40,:]=100
     img[41:49,:]=255
-	edges_opencv = cv2.Canny(np.uint8(img), 50, 100)
+    edges_opencv = cv2.Canny(np.uint8(img), 50, 100)
     input_img = tf.placeholder(tf.float32, [50,50])
-	x_tensor = tf.expand_dims(tf.expand_dims(input_img, axis=0),-1)
-	edges_tensor = TF_Canny(x_tensor, return_raw_edges=True)
+    x_tensor = tf.expand_dims(tf.expand_dims(input_img, axis=0),-1)
+    edges_tensor = TF_Canny(x_tensor, return_raw_edges=True)
 
-	with tf.Session() as sess: edges_tf = sess.run(edges_tensor, feed_dict={input_img:img})
+    with tf.Session() as sess: edges_tf = sess.run(edges_tensor, feed_dict={input_img:img})
 
-	plt.subplot(131), plt.imshow(img, cmap='gray')
-	plt.title('Original Image'), plt.xticks([]), plt.yticks([])
-	plt.subplot(132), plt.imshow(edges_opencv, cmap='gray')
-	plt.title('Edges-OpenCV.Canny'), plt.xticks([]), plt.yticks([])
-	plt.subplot(133), plt.imshow(edges_tf, cmap='gray')
-	plt.title('Edges-TF_Canny'), plt.xticks([]), plt.yticks([])
-	plt.tight_layout()
+    plt.subplot(131), plt.imshow(img, cmap='gray')
+    plt.title('Original Image'), plt.xticks([]), plt.yticks([])
+    plt.subplot(132), plt.imshow(edges_opencv, cmap='gray')
+    plt.title('Edges-OpenCV.Canny'), plt.xticks([]), plt.yticks([])
+    plt.subplot(133), plt.imshow(edges_tf, cmap='gray')
+    plt.title('Edges-TF_Canny'), plt.xticks([]), plt.yticks([])
+    plt.tight_layout()
 	plt.show()
