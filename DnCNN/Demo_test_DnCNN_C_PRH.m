@@ -2,14 +2,14 @@
 %%% This is the testing code demo for color image (Gaussian) denoising.
 %%% The model is trained with 1) noise levels in [0 55]; 2) 432 training images.
 
-run /Users/csprh/Dlaptop/MATLAB/TOOLBOXES/matconvnet-1.0-beta25/matlab/vl_setupnn
-%run /home/cosc/csprh/linux/code/matconvnet/matlab/vl_setupnn
+%run /Users/csprh/Dlaptop/MATLAB/TOOLBOXES/matconvnet-1.0-beta25/matlab/vl_setupnn
+run /home/cosc/csprh/linux/code/matconvnet/matlab/vl_setupnn
 % clear; clc;
 addpath('utilities');
-%folderTest  = '/space/csprh/WATER/material20190426/CLEAR/PNGs';
-%folderTestOut = '/space/csprh/WATER/material20190426/CLEAR/Out'
-folderTest  = '/Volumes/David_Bull/ICME_GC/ORIG/S1ElFuente-Palacio_1920x1080_60fps_10bit_420'; %%% test dataset
-folderTestOut = '/Volumes/David_Bull/ICME_GC/DENOISED1/S1ElFuente-Palacio_1920x1080_60fps_10bit_420';
+folderTest  = '/space/csprh/ICME/PNGS/S1ElFuente-Palacio_1920x1080_60fps_10bit_420';
+folderTestOut = '/space/csprh/ICME/DENOISED1/S1ElFuente-Palacio_1920x1080_60fps_10bit_420'
+%folderTest  = '/Volumes/David_Bull/ICME_GC/ORIG/S1ElFuente-Palacio_1920x1080_60fps_10bit_420'; %%% test dataset
+%folderTestOut = '/Volumes/David_Bull/ICME_GC/DENOISED1/S1ElFuente-Palacio_1920x1080_60fps_10bit_420';
 folderModel = 'model'; 
 noiseSigma  = 45;  %%% image noise level
 showResult  = 1;
