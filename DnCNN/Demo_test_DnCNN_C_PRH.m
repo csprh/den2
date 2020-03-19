@@ -7,11 +7,11 @@
 run /mnt/storage/home/csprh/code/matconvnet-1.0-beta25/matlab/vl_setupnn
 % clear; clc;
 addpath('utilities');
-folderTest  = '/space/csprh/ICME/PNGS/S1ElFuente-Palacio_1920x1080_60fps_10bit_420';
-folderTestOut = '/space/csprh/ICME/DENOISED2/S1ElFuente-Palacio_1920x1080_60fps_10bit_420'
+%folderTest  = '/space/csprh/ICME/PNGS/S1ElFuente-Palacio_1920x1080_60fps_10bit_420';
 %folderTestOut = '/space/csprh/ICME/DENOISED1/S1ElFuente-Palacio_1920x1080_60fps_10bit_420'
-%folderTest  = '/mnt/storage/scratch/csprh/ICME/PNGS/S2ElFuente-Cars_1920x1080_60fps_10bit_420';
-%folderTestOut  = '/mnt/storage/scratch/csprh/ICME/DENOISED1/S2ElFuente-Cars_1920x1080_60fps_10bit_420';
+%folderTestOut = '/space/csprh/ICME/DENOISED1/S1ElFuente-Palacio_1920x1080_60fps_10bit_420'
+folderTest  = '/mnt/storage/scratch/csprh/ICME/PNGS/S1ElFuente-Palacio_1920x1080_60fps_10bit_420';
+folderTestOut  = '/mnt/storage/scratch/csprh/ICME/DENOISED2/S1ElFuente-Palacio_1920x1080_60fps_10bit_420';
 
 %folderTest  = '/Volumes/David_Bull/ICME_GC/ORIG/S1ElFuente-Palacio_1920x1080_60fps_10bit_420'; %%% test dataset
 %folderTestOut = '/Volumes/David_Bull/ICME_GC/DENOISED1/S1ElFuente-Palacio_1920x1080_60fps_10bit_420';
