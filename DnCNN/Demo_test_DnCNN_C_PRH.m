@@ -5,6 +5,7 @@
 %run /Users/csprh/Dlaptop/MATLAB/TOOLBOXES/matconvnet-1.0-beta25/matlab/vl_setupnn
 %run /home/cosc/csprh/linux/code/matconvnet/matlab/vl_setupnn
 run /mnt/storage/home/csprh/code/matconvnet-1.0-beta25/matlab/vl_setupnn
+
 % clear; clc;
 addpath('utilities');
 %folderTest  = '/space/csprh/ICME/PNGS/S1ElFuente-Palacio_1920x1080_60fps_10bit_420';
@@ -23,9 +24,9 @@ pauseTime   = 1;
 
 
 %%% load blind Gaussian denoising model (color image)
-%load(fullfile(folderModel,'GD_Color_Blind.mat')); %%% for sigma in [0,55]
+load(fullfile(folderModel,'GD_Color_Blind.mat')); %%% for sigma in [0,55]
 %load(fullfile(folderModel,'model_Huwei_All50b-epoch-60.mat'));
-load(fullfile('/mnt/storage/home/csprh/code/HUAWEI/DNCNN/TrainingCodes/DnCNNHuawei/data/model_Huwei_All/model_Huwei_All-epoch-19.mat'));
+%load(fullfile('/mnt/storage/home/csprh/code/HUAWEI/DNCNN/TrainingCodes/DnCNNHuawei/data/model_Huwei_All/model_Huwei_All-epoch-19.mat'));
 net = vl_simplenn_tidy(net);
 %%%
 % net = vl_simplenn_tidy(net);
@@ -65,8 +66,8 @@ for i = 1:length(filePaths)
         input = gpuArray(input);
     end
     
-    %res    = vl_simplenn(net,input,[],[],'conserveMemory',true,'mode','test');
-    res = simplenn_matlab(net, input); %%% use this if you did not install matconvnet.
+    res    = vl_simplenn(net,input,[],[],'conserveMemory',true,'mode','test');
+    %res = simplenn_matlab(net, input); %%% use this if you did not install matconvnet.
     output = input - res(end).x;
     output(output>1) = 1;
     output(output<0) = 0;
