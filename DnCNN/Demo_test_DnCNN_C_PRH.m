@@ -25,7 +25,7 @@ pauseTime   = 1;
 %%% load blind Gaussian denoising model (color image)
 %load(fullfile(folderModel,'GD_Color_Blind.mat')); %%% for sigma in [0,55]
 %load(fullfile(folderModel,'model_Huwei_All50b-epoch-60.mat'));
-load(fullfile('/mnt/storage/home/csprh/code/HUAWEI/DNCNN/TrainingCodes/DnCNNHuawei/data/model_Huwei_All/model_Huwei_All-epoch-19.mat '));
+load(fullfile('/mnt/storage/home/csprh/code/HUAWEI/DNCNN/TrainingCodes/DnCNNHuawei/data/model_Huwei_All/model_Huwei_All-epoch-19.mat'));
 net = vl_simplenn_tidy(net);
 %%%
 % net = vl_simplenn_tidy(net);
