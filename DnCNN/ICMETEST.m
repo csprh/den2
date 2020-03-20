@@ -90,7 +90,7 @@ for i = 1:length(filePaths)
     output = input - res(end).x;
     output(output>1) = 1;
     output(output<0) = 0;
-    imwrite(output, fullfile(folderTestOut,filePaths(i).name));
+    imwrite( uint16(output*65535), fullfile(folderTestOut,filePaths(i).name));
     
 end
 
