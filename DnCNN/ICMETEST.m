@@ -30,7 +30,7 @@ folderTestOut  = {'/mnt/storage/scratch/csprh/ICME/DENOISED1/S1ElFuente-Palacio_
 %folderTestOut = '/Volumes/David_Bull/ICME_GC/DENOISED1/S1ElFuente-Palacio_1920x1080_60fps_10bit_420';
 
 
-
+folderModel = 'model'; 
 %%% load blind Gaussian denoising model (color image)
 load(fullfile(folderModel,'GD_Color_Blind.mat')); %%% for sigma in [0,55]
 %load(fullfile(folderModel,'model_Huwei_All50b-epoch-60.mat'));
@@ -49,7 +49,7 @@ for ii = 1: 6
 end
 
 function innerLoop(net, folderTest, folderTestOut)
-folderModel = 'model'; 
+
 noiseSigma  = 45;  %%% image noise level
 showResult  = 1;
 useGPU      = 0;
