@@ -2,9 +2,9 @@ function ICMETEST
 %%% This is the testing code demo for color image (Gaussian) denoising.
 %%% The model is trained with 1) noise levels in [0 55]; 2) 432 training images.
 
-run /Users/csprh/Dlaptop/MATLAB/TOOLBOXES/matconvnet-1.0-beta25/matlab/vl_setupnn
+%run /Users/csprh/Dlaptop/MATLAB/TOOLBOXES/matconvnet-1.0-beta25/matlab/vl_setupnn
 %run /home/cosc/csprh/linux/code/matconvnet/matlab/vl_setupnn
-%run /mnt/storage/home/csprh/code/matconvnet-1.0-beta25/matlab/vl_setupnn
+run /mnt/storage/home/csprh/code/matconvnet-1.0-beta25/matlab/vl_setupnn
 
 % clear; clc;
 addpath('utilities');
