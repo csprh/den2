@@ -28,11 +28,7 @@ folderTestOut  = {'/mnt/storage/scratch/csprh/ICME/DENOISED1/S1ElFuente-Palacio_
 
 %folderTest  = '/Volumes/David_Bull/ICME_GC/ORIG/S1ElFuente-Palacio_1920x1080_60fps_10bit_420'; %%% test dataset
 %folderTestOut = '/Volumes/David_Bull/ICME_GC/DENOISED1/S1ElFuente-Palacio_1920x1080_60fps_10bit_420';
-folderModel = 'model'; 
-noiseSigma  = 45;  %%% image noise level
-showResult  = 1;
-useGPU      = 0;
-pauseTime   = 1;
+
 
 
 %%% load blind Gaussian denoising model (color image)
@@ -53,7 +49,11 @@ for ii = 1: 6
 end
 
 function innerLoop(net, folderTest, folderTestOut)
-
+folderModel = 'model'; 
+noiseSigma  = 45;  %%% image noise level
+showResult  = 1;
+useGPU      = 0;
+pauseTime   = 1;
 %%% move to gpu
 if useGPU
     net = vl_simplenn_move(net, 'gpu') ;
