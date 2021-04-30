@@ -38,7 +38,7 @@ import keras.backend as K
 parser = argparse.ArgumentParser()
 parser.add_argument('--model', default='DnCNN', type=str, help='choose a type of model')
 parser.add_argument('--batch_size', default=128, type=int, help='batch size')
-parser.add_argument('--train_data', default='data/Train400', type=str, help='path of train data')
+parser.add_argument('--train_data', default='/media/csprh/B0C87E48C87E0CBA/CODE/den2/Train400', type=str, help='path of train data')
 parser.add_argument('--sigma', default=25, type=int, help='noise level')
 parser.add_argument('--epoch', default=300, type=int, help='number of train epoches')
 parser.add_argument('--lr', default=1e-3, type=float, help='initial learning rate for Adam')
@@ -65,8 +65,7 @@ def DnCNN(depth,filters=64,image_channels=1, use_bnorm=True):
         x = Conv2D(filters=filters, kernel_size=(3,3), strides=(1,1),kernel_initializer='Orthogonal', padding='same',use_bias = False,name = 'conv'+str(layer_count))(x)
         if use_bnorm:
             layer_count += 1
-            #x = BatchNormalization(axis=3, momentum=0.1,epsilon=0.0001, name = 'bn'+str(layer_count))(x) 
-	    x = BatchNormalization(axis=3, momentum=0.0,epsilon=0.0001, name = 'bn'+str(layer_count))(x)
+        x = BatchNormalization(axis=3, momentum=0.0,epsilon=0.0001, name = 'bn'+str(layer_count))(x)
         layer_count += 1
         x = Activation('relu',name = 'relu'+str(layer_count))(x)  
     # last layer, Conv
